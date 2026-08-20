@@ -1,3 +1,7 @@
 {
-  "workbench.editor.restoreViewState": true
+  "workbench.editor.restoreViewState": true,
+  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "python.analysis.extraPaths": [
+    "/home/vscode/.local/lib/python3.12/site-packages"
+  ]
 }
