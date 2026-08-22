@@ -1,8 +1,137 @@
-{%extends "layout.html"%}
+{% extends "layout.html" %}
 
-{%block title%}Flood Risk Explorer{%endblock%}
+{% block title %}Singapore Flood Risk & Elevation Explorer{% endblock %}
 
-{%block main%}
-<h1>Flood Risk Explorer</h1>
-<p>Welcome to the Flood Risk Explorer!</p>
-{%endblock%}
+{% block head %}
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<!-- Custom App CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+{% endblock %}
+
+{% block main %}
+<!-- Page Header -->
+<div class="row mb-3">
+  <div class="col-12">
+    <div class="d-flex flex-wrap justify-content-between align-items-center pb-2 border-bottom">
+      <div>
+        <h2 class="h3 mb-1">Singapore Planning Areas & Flood Risk Explorer</h2>
+        <p class="text-muted mb-0">Interactive Digital Elevation Model (DEM) & Topographic Analysis by Region</p>
+      </div>
+      <div class="mt-2 mt-md-0">
+        <span class="badge bg-primary px-3 py-2">55 Planning Areas</span>
+        <span class="badge bg-secondary px-3 py-2 ms-1">COP30 DEM (30m)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3">
+  <!-- Interactive Map Column -->
+  <div class="col-lg-8">
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-white d-flex justify-content-between align-items-center py-2">
+        <span class="fw-semibold text-secondary">🗺️ Interactive Map (Click any region to inspect)</span>
+        <div class="d-flex align-items-center">
+          <select id="regionSelect" class="form-select form-select-sm" style="max-width: 220px;">
+            <option value="">-- Jump to a Region --</option>
+          </select>
+        </div>
+      </div>
+      <div class="card-body p-2">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Region Details Panel Column -->
+  <div class="col-lg-4">
+    <div class="card shadow-sm border-0 mb-3" id="detailsCard">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <span class="fw-semibold">📊 Region Details</span>
+        <span id="selectedRegionBadge" class="badge bg-secondary">No Region Selected</span>
+      </div>
+      <div class="card-body">
+        <!-- Default Empty State -->
+        <div id="noSelectionPrompt" class="text-center py-5 text-muted">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-geo-alt mb-3 text-secondary" viewBox="0 0 16 16">
+            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          </svg>
+          <p class="mb-1 fw-semibold">Click on any region on the map</p>
+          <small>View mean elevation, minimum elevation, variability, and flood risk indicator.</small>
+        </div>
+
+        <!-- Selected Region State -->
+        <div id="selectionContent" style="display: none;">
+          <h4 id="panelAreaName" class="text-primary mb-1">--</h4>
+          <p id="panelRegionName" class="text-muted small mb-3">--</p>
+
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <div class="p-3 bg-light rounded stat-card">
+                <div class="text-muted small">Mean Elevation</div>
+                <div class="h4 mb-0 fw-bold" id="panelMeanElev">-- m</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-3 bg-light rounded stat-card">
+                <div class="text-muted small">Min Elevation</div>
+                <div class="h4 mb-0 fw-bold" id="panelMinElev">-- m</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-3 bg-light rounded stat-card">
+                <div class="text-muted small">Std Deviation</div>
+                <div class="h5 mb-0 fw-bold" id="panelStdElev">-- m</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-3 bg-light rounded stat-card">
+                <div class="text-muted small">Topographic Range</div>
+                <div class="h5 mb-0 fw-bold" id="panelRange">--</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small text-muted mb-1">Elevation Vulnerability Level</label>
+            <div id="panelRiskBadge" class="risk-badge text-center mb-2">--</div>
+            <div class="progress" style="height: 8px;">
+              <div id="panelProgressBar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
+            </div>
+            <div class="d-flex justify-content-between small text-muted mt-1">
+              <span>Low (< 5m)</span>
+              <span>Mid (5-20m)</span>
+              <span>High (> 20m)</span>
+            </div>
+          </div>
+
+          <button id="btnResetView" class="btn btn-outline-secondary btn-sm w-100 mt-2">
+            ↺ Reset Map View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Info Card -->
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <h6 class="fw-bold mb-2">💡 About Elevation & Flooding</h6>
+        <p class="small text-muted mb-0">
+          Lower mean and minimum elevation areas (coastal plains and reclaimed regions) have higher exposure to tidal surges and intense precipitation ponding. Higher relief areas offer natural drainage gradient.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- Map Logic JS -->
+<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+{% endblock %}

@@ -10,14 +10,8 @@ RUN apt-get update && apt-get install -y \
     libgeos-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# 2. Install global npm packages
-RUN npm install -g antigravity
-
-# 3. Copy requirements and install Python dependencies
+# 2. Copy requirements and install Python dependencies
 COPY requirements.txt /tmp/pip-tmp/
 RUN pip install --no-cache-dir -r /tmp/pip-tmp/requirements.txt \
     && rm -rf /tmp/pip-tmp
 
-# 4. Install antigravity and expose to PATH
-RUN curl -fsSL https://antigravity.google/cli/install.sh | bash
-ENV PATH="/root/.antigravity/bin:/home/vscode/.antigravity/bin:${PATH}"
