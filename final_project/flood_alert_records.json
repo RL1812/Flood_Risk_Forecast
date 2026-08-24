@@ -1,0 +1,31 @@
+[
+  {
+    "datetime": "2025-05-22T20:16:06+08:00",
+    "updatedTimestamp": "2025-09-03T11:52:52+08:00",
+    "status": null,
+    "event": "Flood",
+    "headline": "Flood Warning",
+    "description": "Flash flood at Wan Tho Ave (Pheng Geck Ave). Please avoid the area. PUB officers have been deployed to render assistance. Issued 1510 hours.",
+    "severity": "Minor",
+    "urgency": "Immediate",
+    "certainty": "Observed",
+    "responseType": "Avoid",
+    "instruction": "Flash flood at [FLOOD_LOCATION].  Please avoid the area. PUB officers have been deployed to render assistance. Issued [BROADCAST_MESSAGE_SENT_TIME] hours.",
+    "senderName": "PUB",
+    "expires": "2025-05-22T21:44:21+08:00",
+    "eventCode": {
+      "valueName": "OET:v1.2",
+      "value": "OET-081"
+    },
+    "areaDesc": "Wan Tho Ave (Pheng Geck Ave), Singapore",
+    "latitude": 1.33201,
+    "longitude": 103.87015,
+    "radius_km": 1.0,
+    "location": {
+      "areaDesc": "Wan Tho Ave (Pheng Geck Ave), Singapore",
+      "latitude": 1.33201,
+      "longitude": 103.87015,
+      "radius_km": 1.0
+    }
+  }
+]

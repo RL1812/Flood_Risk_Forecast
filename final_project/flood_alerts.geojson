@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.87015,
+          1.33201
+        ]
+      },
+      "properties": {
+        "datetime": "2025-05-22T20:16:06+08:00",
+        "updatedTimestamp": "2025-09-03T11:52:52+08:00",
+        "identifier": null,
+        "msgType": null,
+        "status": null,
+        "headline": "Flood Warning",
+        "description": "Flash flood at Wan Tho Ave (Pheng Geck Ave). Please avoid the area. PUB officers have been deployed to render assistance. Issued 1510 hours.",
+        "severity": "Minor",
+        "urgency": "Immediate",
+        "instruction": "Flash flood at [FLOOD_LOCATION].  Please avoid the area. PUB officers have been deployed to render assistance. Issued [BROADCAST_MESSAGE_SENT_TIME] hours.",
+        "areaDesc": "Wan Tho Ave (Pheng Geck Ave), Singapore",
+        "radius_km": 1.0,
+        "region_match": {
+          "planning_area": "TOA PAYOH",
+          "planning_area_code": "TP",
+          "region_name": "CENTRAL REGION",
+          "region_code": "CR",
+          "elev_mean": 14.01,
+          "elev_min": -10.24,
+          "elev_std": 7.79,
+          "match_type": "exact_containment"
+        },
+        "region_planning_area": "TOA PAYOH",
+        "region_planning_area_code": "TP",
+        "region_region_name": "CENTRAL REGION",
+        "region_region_code": "CR",
+        "region_elev_mean": 14.01,
+        "region_elev_min": -10.24,
+        "region_elev_std": 7.79,
+        "region_match_type": "exact_containment"
+      }
+    }
+  ]
+}
