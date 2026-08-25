@@ -1,0 +1,194 @@
+[
+  {
+    "datetime": "2025-05-22T20:16:06+08:00",
+    "identifier": null,
+    "event": "Flood",
+    "description": "Flash flood at Wan Tho Ave (Pheng Geck Ave). Please avoid the area. PUB officers have been deployed to render assistance. Issued 1510 hours.",
+    "severity": "Minor",
+    "urgency": "Immediate",
+    "instruction": "Flash flood at [FLOOD_LOCATION].  Please avoid the area. PUB officers have been deployed to render assistance. Issued [BROADCAST_MESSAGE_SENT_TIME] hours.",
+    "location": {
+      "areaDesc": "Wan Tho Ave (Pheng Geck Ave), Singapore",
+      "latitude": 1.33201,
+      "longitude": 103.87015,
+      "radius_km": 1.0,
+      "PLN_AREA_N": "TOA PAYOH"
+    }
+  },
+  {
+    "datetime": "2025-12-04T14:27:08+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17648296281603-HONGYU",
+    "event": "Flood",
+    "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Boon Lay Avenue. Please avoid the area. Issued 1427 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Please avoid this area for the next one (1) hour.",
+    "location": {
+      "areaDesc": "Boon Lay Avenue, Singapore",
+      "latitude": 1.34487,
+      "longitude": 103.70825,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "JURONG WEST"
+    }
+  },
+  {
+    "datetime": "2025-12-04T14:54:24+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17648312642553-HONGYU",
+    "event": "Flood",
+    "description": "Flash flood subsided at Boon Lay Avenue. Issued 1454 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Flash flood subsided at Boon Lay Avenue. Traffic is now passable. Issued 1454 hours.",
+    "location": {
+      "areaDesc": "Boon Lay Avenue, Singapore",
+      "latitude": 1.34487,
+      "longitude": 103.70825,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "JURONG WEST"
+    }
+  },
+  {
+    "datetime": "2025-12-12T16:16:59+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17655274197723-HONGYU",
+    "event": "Flood",
+    "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Upper East Coast Road near Parbury Avenuve. Please avoid the area. Issued 1616 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Please avoid this area for the next one (1) hour.",
+    "location": {
+      "areaDesc": "Upper East Coast Road, Singapore",
+      "latitude": 1.31564,
+      "longitude": 103.94345,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "BEDOK"
+    }
+  },
+  {
+    "datetime": "2025-12-12T16:25:07+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17655279077293-HONGYU",
+    "event": "Flood",
+    "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Sims Avenue East from Lorong Sarina to Lorong Mydin. Please avoid the area. Issued 1625 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Please avoid this area for the next one (1) hour.",
+    "location": {
+      "areaDesc": "Sims Avenue East, Singapore",
+      "latitude": 1.31983,
+      "longitude": 103.9082,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "BEDOK"
+    }
+  },
+  {
+    "datetime": "2025-12-12T17:00:28+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17655300265693-HONGYU",
+    "event": "Flood",
+    "description": "Flash flood subsided at Upper East Coast Road near Parbury Ave. Issued 1700 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Flash flood subsided at Upper East Coast Road. Traffic is now passable. Issued 1700 hours.",
+    "location": {
+      "areaDesc": "Upper East Coast Road, Singapore",
+      "latitude": 1.31564,
+      "longitude": 103.94345,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "BEDOK"
+    }
+  },
+  {
+    "datetime": "2025-12-12T17:00:59+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17655300590183-HONGYU",
+    "event": "Flood",
+    "description": "Flash flood subsided at Sims Avenue East from Lorong Sarina to Lorong Mydin. Issued 1700 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Flash flood subsided at Sims Avenue East. Traffic is now passable. Issued 1700 hours.",
+    "location": {
+      "areaDesc": "Sims Avenue East, Singapore",
+      "latitude": 1.31983,
+      "longitude": 103.9082,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "BEDOK"
+    }
+  },
+  {
+    "datetime": "2026-02-18T17:51:26+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17714082864413-HONGYU",
+    "event": "Flood",
+    "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Jurong Town Hall Road from Jurong East Street 11 to Jurong East Street 12. Please avoid the area. Issued 1751 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Please avoid this area for the next one (1) hour.",
+    "location": {
+      "areaDesc": "At Jurong Town Hall Road From Jurong East Street 11 To Jurong East Street 12, Singapore",
+      "latitude": 1.32936,
+      "longitude": 103.74325,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "JURONG EAST"
+    }
+  },
+  {
+    "datetime": "2026-02-18T18:04:18+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17714090584583-HONGYU",
+    "event": "Flood",
+    "description": "Flash flood subsided at Jurong Town Hall Road from Jurong East Street 11 to Jurong East Street 12. Issued 1804 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Flash flood subsided at At Jurong Town Hall Road From Jurong East Street 11 To Jurong East Street 12. Traffic is now passable. Issued 1804 hours.",
+    "location": {
+      "areaDesc": "At Jurong Town Hall Road From Jurong East Street 11 To Jurong East Street 12, Singapore",
+      "latitude": 1.32936,
+      "longitude": 103.74325,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "JURONG EAST"
+    }
+  },
+  {
+    "datetime": "2026-05-05T18:21:22+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17779764821873-BYINYI",
+    "event": "Flood",
+    "description": "Flash flood subsided at KPE (towards ECP) slip road to Buangkok East Drive. Issued 1821 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Flash flood subsided at At KPE (towards ECP) Slip Road To Buangkok East Drive. Traffic is now passable. Issued 1821 hours.",
+    "location": {
+      "areaDesc": "At KPE (towards ECP) Slip Road To Buangkok East Drive, Singapore",
+      "latitude": 1.37603,
+      "longitude": 103.91004,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "SENGKANG"
+    }
+  },
+  {
+    "datetime": "2026-05-15T10:47:24+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17788132448143-BYINYI",
+    "event": "Flood",
+    "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Mountbatten Road (from Amber Road to Tanjong Katong Road South). Please avoid the area. Issued 1047 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Please avoid this area for the next one (1) hour.",
+    "location": {
+      "areaDesc": "At Mountbatten Road (from Amber Road To Tanjong Katong Road South), Singapore",
+      "latitude": 1.3021,
+      "longitude": 103.89763,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "MARINE PARADE"
+    }
+  },
+  {
+    "datetime": "2026-05-15T11:03:42+08:00",
+    "identifier": "2.49.0.0.702.2-BCM-17788142227043-BYINYI",
+    "event": "Flood",
+    "description": "Flash flood subsided at Mountbatten Road (from Amber Road to Tanjong Katong Road South). Issued 1103 hours.",
+    "severity": "Moderate",
+    "urgency": "Immediate",
+    "instruction": "Flash flood subsided at At Mountbatten Road (from Amber Road To Tanjong Katong Road South). Traffic is now passable. Issued 1103 hours.",
+    "location": {
+      "areaDesc": "At Mountbatten Road (from Amber Road To Tanjong Katong Road South), Singapore",
+      "latitude": 1.3021,
+      "longitude": 103.89763,
+      "radius_km": 0.05,
+      "PLN_AREA_N": "MARINE PARADE"
+    }
+  }
+]
