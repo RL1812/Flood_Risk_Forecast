@@ -1,6 +1,4537 @@
 [
   {
     "flood_event": {
+      "datetime": "2023-07-20T09:25:00+08:00",
+      "PLN_AREA_N": "BUKIT TIMAH",
+      "elev_mean": 27.48,
+      "elev_min": 2.41,
+      "elev_std": 11.24,
+      "latitude": 1.3299967651884823,
+      "longitude": 103.79069950364038,
+      "description": "A flash flood hit a 200m stretch of Dunearn Road near Sime Darby Centre at around 9.25am, causing two traffic lanes to be temporarily closed. The flood subsided within 15 minutes.",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2023-07-20T07:25:00+08:00",
+      "window_end": "2023-07-20T09:10:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S50",
+        "deviceId": "S50",
+        "name": "Clementi Road",
+        "location": {
+          "latitude": 1.3337,
+          "longitude": 103.7768,
+          "PLN_AREA_N": "BUKIT TIMAH"
+        }
+      },
+      {
+        "id": "S213",
+        "deviceId": "S213",
+        "name": "S213",
+        "location": {
+          "latitude": 1.32427,
+          "longitude": 103.8097,
+          "PLN_AREA_N": "BUKIT TIMAH"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2023-07-20T07:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T07:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T07:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T07:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T07:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T07:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T07:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0.6
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 1.2
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0.2
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0.4
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0.2
+          },
+          {
+            "stationId": "S213",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0.2
+          },
+          {
+            "stationId": "S213",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 0
+          },
+          {
+            "stationId": "S213",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 2.8
+          },
+          {
+            "stationId": "S213",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T08:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 6.6
+          },
+          {
+            "stationId": "S213",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T09:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 5.4
+          },
+          {
+            "stationId": "S213",
+            "value": 5.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T09:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 8.8
+          },
+          {
+            "stationId": "S213",
+            "value": 9.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2023-07-20T09:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S50",
+            "value": 9.60001
+          },
+          {
+            "stationId": "S213",
+            "value": 12.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-05-04T06:55:00+08:00",
+      "PLN_AREA_N": "GEYLANG",
+      "elev_mean": 7.77,
+      "elev_min": -25.52,
+      "elev_std": 4.71,
+      "latitude": 1.3208955383568208,
+      "longitude": 103.8895225692458,
+      "description": "Flash flood warning issued by PUB urging people to avoid the junction of Mountbatten Road and Tanjong Katong Road South.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-05-04T04:55:00+08:00",
+      "window_end": "2024-05-04T06:40:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S215",
+        "deviceId": "S215",
+        "name": "GEYLANG EAST CENTRAL",
+        "location": {
+          "latitude": 1.32785,
+          "longitude": 103.88899,
+          "PLN_AREA_N": "GEYLANG"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2024-05-04T04:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T05:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T06:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T06:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T06:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T06:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T06:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T06:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T06:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T06:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T06:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S215",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-05-04T09:00:00+08:00",
+      "PLN_AREA_N": "DOWNTOWN CORE",
+      "elev_mean": 8.6,
+      "elev_min": -7.01,
+      "elev_std": 7.26,
+      "latitude": 1.286789224537618,
+      "longitude": 103.8554969918362,
+      "description": "Flash flood warning issued covering Craig Road in the Tanjong Pagar area.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-05-04T07:00:00+08:00",
+      "window_end": "2024-05-04T08:45:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S119",
+        "deviceId": "S119",
+        "name": "Nicoll Highway",
+        "location": {
+          "latitude": 1.30105,
+          "longitude": 103.8666,
+          "PLN_AREA_N": "DOWNTOWN CORE"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2024-05-04T07:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 5.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 3.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 5.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 5.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 3.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 1.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 1.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S119",
+            "value": 0.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-05-04T09:00:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "description": "Flash flood warning issued covering Jalan Seaview in the Marine Parade area.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-05-04T07:00:00+08:00",
+      "window_end": "2024-05-04T08:45:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S78",
+        "deviceId": "S78",
+        "name": "Poole Road",
+        "location": {
+          "latitude": 1.30703,
+          "longitude": 103.89067,
+          "PLN_AREA_N": "MARINE PARADE"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2024-05-04T07:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 4.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T07:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 2.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 1.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 1.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-05-04T08:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-05-04T09:00:00+08:00",
+      "PLN_AREA_N": "BOON LAY",
+      "elev_mean": 10.09,
+      "elev_min": -22.97,
+      "elev_std": 7.0,
+      "latitude": 1.3147871613568884,
+      "longitude": 103.70221716813961,
+      "description": "Flash flood warning issued covering a section of Jalan Boon Lay in the west.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-05-04T07:00:00+08:00",
+      "window_end": "2024-05-04T08:45:00+08:00"
+    },
+    "pln_area_sensors": [],
+    "readings_count": 0,
+    "rainfall_readings": []
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-10-04T15:30:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "description": "Flooding occurred at Still Road South and surrounding HDB blocks at Block 66 and 67 Marine Drive due to a damaged water pipe, affecting a lift and a path to the temporary community centre office.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-10-04T13:30:00+08:00",
+      "window_end": "2024-10-04T15:15:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S78",
+        "deviceId": "S78",
+        "name": "Poole Road",
+        "location": {
+          "latitude": 1.30703,
+          "longitude": 103.89067,
+          "PLN_AREA_N": "MARINE PARADE"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2024-10-04T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T13:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T13:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T14:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-10-04T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-11-16T15:20:00+08:00",
+      "PLN_AREA_N": "BUKIT TIMAH",
+      "elev_mean": 27.48,
+      "elev_min": 2.41,
+      "elev_std": 11.24,
+      "latitude": 1.3299967651884823,
+      "longitude": 103.79069950364038,
+      "description": "Heavy downpour caused a flash flood along Bukit Timah Road near King Albert Park MRT station due to high water levels in adjacent drains and Bukit Timah Canal. The floodwaters subsided 10 minutes later.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-11-16T13:20:00+08:00",
+      "window_end": "2024-11-16T15:05:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S50",
+        "deviceId": "S50",
+        "name": "Clementi Road",
+        "location": {
+          "latitude": 1.3337,
+          "longitude": 103.7768,
+          "PLN_AREA_N": "BUKIT TIMAH"
+        }
+      },
+      {
+        "id": "S213",
+        "deviceId": "S213",
+        "name": "S213",
+        "location": {
+          "latitude": 1.32427,
+          "longitude": 103.8097,
+          "PLN_AREA_N": "BUKIT TIMAH"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2024-11-16T13:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T13:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T13:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T13:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 1.4
+          },
+          {
+            "stationId": "S50",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 5.6
+          },
+          {
+            "stationId": "S50",
+            "value": 2.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 8
+          },
+          {
+            "stationId": "S50",
+            "value": 1.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 7.4
+          },
+          {
+            "stationId": "S50",
+            "value": 3.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T14:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 5.6
+          },
+          {
+            "stationId": "S50",
+            "value": 7.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 3.2
+          },
+          {
+            "stationId": "S50",
+            "value": 8.60001
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-16T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 4.2
+          },
+          {
+            "stationId": "S50",
+            "value": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-11-17T14:00:00+08:00",
+      "PLN_AREA_N": "ROCHOR",
+      "elev_mean": 11.49,
+      "elev_min": -4.81,
+      "elev_std": 7.41,
+      "latitude": 1.3041387872416432,
+      "longitude": 103.85328440346635,
+      "description": "Heavy rain triggered a flash flood at Ophir Road near Bugis.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-11-17T12:00:00+08:00",
+      "window_end": "2024-11-17T13:45:00+08:00"
+    },
+    "pln_area_sensors": [],
+    "readings_count": 0,
+    "rainfall_readings": []
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-11-22T15:30:00+08:00",
+      "PLN_AREA_N": "TOA PAYOH",
+      "elev_mean": 14.01,
+      "elev_min": -10.24,
+      "elev_std": 7.79,
+      "latitude": 1.3366835566138826,
+      "longitude": 103.86102587476296,
+      "description": "Flash flood occurred at Wan Tho Avenue in the Potong Pasir area in the afternoon, subsiding within 10 minutes.",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-11-22T13:30:00+08:00",
+      "window_end": "2024-11-22T15:15:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S88",
+        "deviceId": "S88",
+        "name": "Toa Payoh North",
+        "location": {
+          "latitude": 1.3427,
+          "longitude": 103.8482,
+          "PLN_AREA_N": "TOA PAYOH"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2024-11-22T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 4.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 6.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 6.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 8.39999
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 4.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 6.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 6.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 4.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 2.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-11-22T15:30:00+08:00",
+      "PLN_AREA_N": "YISHUN",
+      "elev_mean": 13.43,
+      "elev_min": -17.85,
+      "elev_std": 10.35,
+      "latitude": 1.4150394317122374,
+      "longitude": 103.83711790511772,
+      "description": "Flash flood occurred at Yishun Avenue 7 in the afternoon, subsiding within 10 minutes with assistance provided to motorists.",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-11-22T13:30:00+08:00",
+      "window_end": "2024-11-22T15:15:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S209",
+        "deviceId": "S209",
+        "name": "S209",
+        "location": {
+          "latitude": 1.42111,
+          "longitude": 103.84472,
+          "PLN_AREA_N": "YISHUN"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2024-11-22T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T13:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 1.212
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0.606
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 2.424
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 3.636
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 4.04
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 4.646
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 1.616
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 1.414
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0.808
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T14:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0.404
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0.404
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 2.424
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 5.454
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-11-22T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 6.868
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-12-29T15:30:00+08:00",
+      "PLN_AREA_N": "TOA PAYOH",
+      "elev_mean": 14.01,
+      "elev_min": -10.24,
+      "elev_std": 7.79,
+      "latitude": 1.3366835566138826,
+      "longitude": 103.86102587476296,
+      "description": "Heavy downpours triggered flash floods in nearly 20 locations across Singapore, including Toa Payoh, which subsided within 20 minutes.",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-12-29T13:30:00+08:00",
+      "window_end": "2024-12-29T15:15:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S88",
+        "deviceId": "S88",
+        "name": "Toa Payoh North",
+        "location": {
+          "latitude": 1.3427,
+          "longitude": 103.8482,
+          "PLN_AREA_N": "TOA PAYOH"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2024-12-29T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T13:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T13:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T14:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S88",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-12-29T17:00:00+08:00",
+      "PLN_AREA_N": "BUKIT TIMAH",
+      "elev_mean": 27.48,
+      "elev_min": 2.41,
+      "elev_std": 11.24,
+      "latitude": 1.3299967651884823,
+      "longitude": 103.79069950364038,
+      "description": "Flash floods occurred along Dunearn Road and Bukit Timah Road near King Albert Park from about 5pm due to high water levels in nearby drains and Bukit Timah Canal, subsiding in 20 minutes.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2024-12-29T15:00:00+08:00",
+      "window_end": "2024-12-29T16:45:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S50",
+        "deviceId": "S50",
+        "name": "Clementi Road",
+        "location": {
+          "latitude": 1.3337,
+          "longitude": 103.7768,
+          "PLN_AREA_N": "BUKIT TIMAH"
+        }
+      },
+      {
+        "id": "S213",
+        "deviceId": "S213",
+        "name": "S213",
+        "location": {
+          "latitude": 1.32427,
+          "longitude": 103.8097,
+          "PLN_AREA_N": "BUKIT TIMAH"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2024-12-29T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.4
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.8
+          },
+          {
+            "stationId": "S50",
+            "value": 1.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 1.4
+          },
+          {
+            "stationId": "S50",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.4
+          },
+          {
+            "stationId": "S50",
+            "value": 2.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.2
+          },
+          {
+            "stationId": "S50",
+            "value": 0.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.2
+          },
+          {
+            "stationId": "S50",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 2.6
+          },
+          {
+            "stationId": "S50",
+            "value": 0.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 2
+          },
+          {
+            "stationId": "S50",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T15:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.4
+          },
+          {
+            "stationId": "S50",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.4
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.2
+          },
+          {
+            "stationId": "S50",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.4
+          },
+          {
+            "stationId": "S50",
+            "value": 2.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 1.2
+          },
+          {
+            "stationId": "S50",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 5
+          },
+          {
+            "stationId": "S50",
+            "value": 2.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 5.4
+          },
+          {
+            "stationId": "S50",
+            "value": 1.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 8.39999
+          },
+          {
+            "stationId": "S50",
+            "value": 2.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 7.2
+          },
+          {
+            "stationId": "S50",
+            "value": 4.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2024-12-29T16:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 9.2
+          },
+          {
+            "stationId": "S50",
+            "value": 7.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-01-10T18:00:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "description": "Flooding occurred along a stretch of Jalan Seaview due to heavy rain coinciding with a high tide of 2.8m, which temporarily overwhelmed the adjacent canal and surrounding roadside drains.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-01-10T16:00:00+08:00",
+      "window_end": "2025-01-10T17:45:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S78",
+        "deviceId": "S78",
+        "name": "Poole Road",
+        "location": {
+          "latitude": 1.30703,
+          "longitude": 103.89067,
+          "PLN_AREA_N": "MARINE PARADE"
+        }
+      }
+    ],
+    "readings_count": 0,
+    "rainfall_readings": []
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-03-14T09:00:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "description": "",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-03-14T07:00:00+08:00",
+      "window_end": "2025-03-14T08:45:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S78",
+        "deviceId": "S78",
+        "name": "Poole Road",
+        "location": {
+          "latitude": 1.30703,
+          "longitude": 103.89067,
+          "PLN_AREA_N": "MARINE PARADE"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2025-03-14T07:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T07:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-14T08:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-03-20T14:00:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "description": "Flooding occurred on a 15m stretch along the intersection of Mountbatten Road and Jalan Seaview for about two hours due to heavy rainfall and high tide, affecting the road and a nearby property.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-03-20T12:00:00+08:00",
+      "window_end": "2025-03-20T13:45:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S78",
+        "deviceId": "S78",
+        "name": "Poole Road",
+        "location": {
+          "latitude": 1.30703,
+          "longitude": 103.89067,
+          "PLN_AREA_N": "MARINE PARADE"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2025-03-20T12:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T12:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-03-20T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-13T15:30:00+08:00",
+      "PLN_AREA_N": "YISHUN",
+      "elev_mean": 13.43,
+      "elev_min": -17.85,
+      "elev_std": 10.35,
+      "latitude": 1.4150394317122374,
+      "longitude": 103.83711790511772,
+      "description": "Flash flood broke out along Yishun Avenue 7 after heavy rain on Sunday afternoon, subsiding within an hour.",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-04-13T13:30:00+08:00",
+      "window_end": "2025-04-13T15:15:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S209",
+        "deviceId": "S209",
+        "name": "S209",
+        "location": {
+          "latitude": 1.42111,
+          "longitude": 103.84472,
+          "PLN_AREA_N": "YISHUN"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2025-04-13T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 11.11
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 12.928
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 11.312
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 7.474
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 10.706
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 8.282
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 5.252
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 4.444
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 7.676
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 6.262
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 4.848
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 3.838
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 2.424
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 2.222
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 2.424
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0.808
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0.202
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0.202
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S209",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-13T15:30:00+08:00",
+      "PLN_AREA_N": "PUNGGOL",
+      "elev_mean": 10.82,
+      "elev_min": 0.0,
+      "elev_std": 7.63,
+      "latitude": 1.405364529278244,
+      "longitude": 103.91004604844186,
+      "description": "Flash flood broke out along Punggol Way slip road to TPE after heavy rain on Sunday afternoon, subsiding within an hour.",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-04-13T13:30:00+08:00",
+      "window_end": "2025-04-13T15:15:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S81",
+        "deviceId": "S81",
+        "name": "Punggol Central",
+        "location": {
+          "latitude": 1.4029,
+          "longitude": 103.9092,
+          "PLN_AREA_N": "PUNGGOL"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2025-04-13T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 3.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 8.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 13.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 12.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 11.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 9.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 6.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 4.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 3.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 4.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 2.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 0.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S81",
+            "value": 0.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-13T15:30:00+08:00",
+      "PLN_AREA_N": "KALLANG",
+      "elev_mean": 6.74,
+      "elev_min": -9.07,
+      "elev_std": 4.4,
+      "latitude": 1.311124875369188,
+      "longitude": 103.86654409888384,
+      "description": "Flash flood broke out along the KPE slip road to Buangkok East Drive after heavy rain on Sunday afternoon, subsiding within an hour.",
+      "severity": "Minor",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-04-13T13:30:00+08:00",
+      "window_end": "2025-04-13T15:15:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S214",
+        "deviceId": "S214",
+        "name": "S214",
+        "location": {
+          "latitude": 1.29911,
+          "longitude": 103.88289,
+          "PLN_AREA_N": "KALLANG"
+        }
+      },
+      {
+        "id": "S123",
+        "deviceId": "S123",
+        "name": "Towner Road",
+        "location": {
+          "latitude": 1.3214,
+          "longitude": 103.8577,
+          "PLN_AREA_N": "KALLANG"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2025-04-13T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 0
+          },
+          {
+            "stationId": "S123",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 0
+          },
+          {
+            "stationId": "S123",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 0
+          },
+          {
+            "stationId": "S123",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 0
+          },
+          {
+            "stationId": "S123",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 0
+          },
+          {
+            "stationId": "S123",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T13:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 0
+          },
+          {
+            "stationId": "S123",
+            "value": 3.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 0
+          },
+          {
+            "stationId": "S123",
+            "value": 4.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 1.97
+          },
+          {
+            "stationId": "S123",
+            "value": 5.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 8.077
+          },
+          {
+            "stationId": "S123",
+            "value": 6.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 7.683
+          },
+          {
+            "stationId": "S123",
+            "value": 4.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 6.895
+          },
+          {
+            "stationId": "S123",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 4.334
+          },
+          {
+            "stationId": "S123",
+            "value": 5.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 3.546
+          },
+          {
+            "stationId": "S123",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 2.955
+          },
+          {
+            "stationId": "S123",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 3.152
+          },
+          {
+            "stationId": "S123",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 1.773
+          },
+          {
+            "stationId": "S123",
+            "value": 1.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 2.364
+          },
+          {
+            "stationId": "S123",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T14:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 1.379
+          },
+          {
+            "stationId": "S123",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 0.788
+          },
+          {
+            "stationId": "S123",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 1.97
+          },
+          {
+            "stationId": "S123",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 2.364
+          },
+          {
+            "stationId": "S123",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-13T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S214",
+            "value": 0.788
+          },
+          {
+            "stationId": "S123",
+            "value": 1.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-20T17:00:00+08:00",
+      "PLN_AREA_N": "BUKIT TIMAH",
+      "elev_mean": 27.48,
+      "elev_min": 2.41,
+      "elev_std": 11.24,
+      "latitude": 1.3299967651884823,
+      "longitude": 103.79069950364038,
+      "description": "Flash flood occurred between 5pm and 6pm as heavy rain temporarily overwhelmed the capacity of surrounding drains and canals.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-04-20T15:00:00+08:00",
+      "window_end": "2025-04-20T16:45:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S50",
+        "deviceId": "S50",
+        "name": "Clementi Road",
+        "location": {
+          "latitude": 1.3337,
+          "longitude": 103.7768,
+          "PLN_AREA_N": "BUKIT TIMAH"
+        }
+      },
+      {
+        "id": "S213",
+        "deviceId": "S213",
+        "name": "S213",
+        "location": {
+          "latitude": 1.32427,
+          "longitude": 103.8097,
+          "PLN_AREA_N": "BUKIT TIMAH"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2025-04-20T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.2
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 0.4
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 2.8
+          },
+          {
+            "stationId": "S50",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 4
+          },
+          {
+            "stationId": "S50",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 4
+          },
+          {
+            "stationId": "S50",
+            "value": 2.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S213",
+            "value": 7.4
+          },
+          {
+            "stationId": "S50",
+            "value": 6.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-20T17:00:00+08:00",
+      "PLN_AREA_N": "NEWTON",
+      "elev_mean": 20.37,
+      "elev_min": 1.45,
+      "elev_std": 9.67,
+      "latitude": 1.3086600233095602,
+      "longitude": 103.83807779586849,
+      "description": "Flash flood occurred between 5pm and 6pm as heavy rain temporarily overwhelmed the capacity of surrounding drains and canals.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "",
+      "source": "cna_flood_events_2023_2025.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-04-20T15:00:00+08:00",
+      "window_end": "2025-04-20T16:45:00+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S111",
+        "deviceId": "S111",
+        "name": "Scotts Road",
+        "location": {
+          "latitude": 1.31055,
+          "longitude": 103.8365,
+          "PLN_AREA_N": "NEWTON"
+        }
+      }
+    ],
+    "readings_count": 22,
+    "rainfall_readings": [
+      {
+        "timestamp": "2025-04-20T15:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T15:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-04-20T16:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S111",
+            "value": 3.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
       "datetime": "2025-05-22T20:16:06+08:00",
       "PLN_AREA_N": "TOA PAYOH",
       "elev_mean": 14.01,
@@ -11,7 +4542,8 @@
       "description": "Flash flood at Wan Tho Ave (Pheng Geck Ave). Please avoid the area. PUB officers have been deployed to render assistance. Issued 1510 hours.",
       "severity": "Minor",
       "urgency": "Immediate",
-      "instruction": "Flash flood at [FLOOD_LOCATION].  Please avoid the area. PUB officers have been deployed to render assistance. Issued [BROADCAST_MESSAGE_SENT_TIME] hours."
+      "instruction": "Flash flood at [FLOOD_LOCATION].  Please avoid the area. PUB officers have been deployed to render assistance. Issued [BROADCAST_MESSAGE_SENT_TIME] hours.",
+      "source": "flood_events_extracted.json"
     },
     "rainfall_window": {
       "window_start": "2025-05-22T18:16:06+08:00",
@@ -234,7 +4766,8 @@
       "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Boon Lay Avenue. Please avoid the area. Issued 1427 hours.",
       "severity": "Moderate",
       "urgency": "Immediate",
-      "instruction": "Please avoid this area for the next one (1) hour."
+      "instruction": "Please avoid this area for the next one (1) hour.",
+      "source": "flood_events_extracted.json"
     },
     "rainfall_window": {
       "window_start": "2025-12-04T12:27:08+08:00",
@@ -242,22 +4775,22 @@
     },
     "pln_area_sensors": [
       {
-        "id": "S229",
-        "deviceId": "S229",
-        "name": "Jurong West Street 42",
+        "id": "S228",
+        "deviceId": "S228",
+        "name": "S228",
         "location": {
-          "latitude": 1.35167,
-          "longitude": 103.72195,
+          "latitude": 1.34703,
+          "longitude": 103.70073,
           "PLN_AREA_N": "JURONG WEST"
         }
       },
       {
-        "id": "S228",
-        "deviceId": "S228",
-        "name": "Jurong West Street 73",
+        "id": "S229",
+        "deviceId": "S229",
+        "name": "S229",
         "location": {
-          "latitude": 1.34703,
-          "longitude": 103.70073,
+          "latitude": 1.35167,
+          "longitude": 103.72195,
           "PLN_AREA_N": "JURONG WEST"
         }
       }
@@ -541,6 +5074,324 @@
   },
   {
     "flood_event": {
+      "datetime": "2025-12-04T14:54:24+08:00",
+      "PLN_AREA_N": "JURONG WEST",
+      "elev_mean": 13.73,
+      "elev_min": -5.57,
+      "elev_std": 7.2,
+      "latitude": 1.34487,
+      "longitude": 103.70825,
+      "description": "Flash flood subsided at Boon Lay Avenue. Issued 1454 hours.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "Flash flood subsided at Boon Lay Avenue. Traffic is now passable. Issued 1454 hours.",
+      "source": "flood_events_extracted.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-12-04T12:54:24+08:00",
+      "window_end": "2025-12-04T14:39:24+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S228",
+        "deviceId": "S228",
+        "name": "S228",
+        "location": {
+          "latitude": 1.34703,
+          "longitude": 103.70073,
+          "PLN_AREA_N": "JURONG WEST"
+        }
+      },
+      {
+        "id": "S229",
+        "deviceId": "S229",
+        "name": "S229",
+        "location": {
+          "latitude": 1.35167,
+          "longitude": 103.72195,
+          "PLN_AREA_N": "JURONG WEST"
+        }
+      }
+    ],
+    "readings_count": 21,
+    "rainfall_readings": [
+      {
+        "timestamp": "2025-12-04T12:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0.4
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0.2
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 0
+          },
+          {
+            "stationId": "S228",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T13:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 1.4
+          },
+          {
+            "stationId": "S228",
+            "value": 4.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T14:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 2
+          },
+          {
+            "stationId": "S228",
+            "value": 4.9
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T14:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 1
+          },
+          {
+            "stationId": "S228",
+            "value": 12.7
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T14:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 4.5
+          },
+          {
+            "stationId": "S228",
+            "value": 14.1
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T14:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 13.4
+          },
+          {
+            "stationId": "S228",
+            "value": 10.7
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T14:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 10.4
+          },
+          {
+            "stationId": "S228",
+            "value": 3.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T14:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 6.9
+          },
+          {
+            "stationId": "S228",
+            "value": 5.5
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T14:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 6.7
+          },
+          {
+            "stationId": "S228",
+            "value": 7.5
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-04T14:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S229",
+            "value": 6.7
+          },
+          {
+            "stationId": "S228",
+            "value": 5.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
       "datetime": "2025-12-12T16:16:59+08:00",
       "PLN_AREA_N": "BEDOK",
       "elev_mean": 12.86,
@@ -551,7 +5402,8 @@
       "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Upper East Coast Road near Parbury Avenuve. Please avoid the area. Issued 1616 hours.",
       "severity": "Moderate",
       "urgency": "Immediate",
-      "instruction": "Please avoid this area for the next one (1) hour."
+      "instruction": "Please avoid this area for the next one (1) hour.",
+      "source": "flood_events_extracted.json"
     },
     "rainfall_window": {
       "window_start": "2025-12-12T14:16:59+08:00",
@@ -565,6 +5417,16 @@
         "location": {
           "latitude": 1.30648,
           "longitude": 103.9104,
+          "PLN_AREA_N": "BEDOK"
+        }
+      },
+      {
+        "id": "S212",
+        "deviceId": "S212",
+        "name": "S212",
+        "location": {
+          "latitude": 1.31835,
+          "longitude": 103.93574,
           "PLN_AREA_N": "BEDOK"
         }
       }
@@ -774,7 +5636,8 @@
       "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Sims Avenue East from Lorong Sarina to Lorong Mydin. Please avoid the area. Issued 1625 hours.",
       "severity": "Moderate",
       "urgency": "Immediate",
-      "instruction": "Please avoid this area for the next one (1) hour."
+      "instruction": "Please avoid this area for the next one (1) hour.",
+      "source": "flood_events_extracted.json"
     },
     "rainfall_window": {
       "window_start": "2025-12-12T14:25:07+08:00",
@@ -788,6 +5651,16 @@
         "location": {
           "latitude": 1.30648,
           "longitude": 103.9104,
+          "PLN_AREA_N": "BEDOK"
+        }
+      },
+      {
+        "id": "S212",
+        "deviceId": "S212",
+        "name": "S212",
+        "location": {
+          "latitude": 1.31835,
+          "longitude": 103.93574,
           "PLN_AREA_N": "BEDOK"
         }
       }
@@ -987,6 +5860,240 @@
   },
   {
     "flood_event": {
+      "datetime": "2025-12-12T17:00:28+08:00",
+      "PLN_AREA_N": "BEDOK",
+      "elev_mean": 12.86,
+      "elev_min": -4.33,
+      "elev_std": 6.66,
+      "latitude": 1.31564,
+      "longitude": 103.94345,
+      "description": "Flash flood subsided at Upper East Coast Road near Parbury Ave. Issued 1700 hours.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "Flash flood subsided at Upper East Coast Road. Traffic is now passable. Issued 1700 hours.",
+      "source": "flood_events_extracted.json"
+    },
+    "rainfall_window": {
+      "window_start": "2025-12-12T15:00:28+08:00",
+      "window_end": "2025-12-12T16:45:28+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S113",
+        "deviceId": "S113",
+        "name": "Marine Parade Road",
+        "location": {
+          "latitude": 1.30648,
+          "longitude": 103.9104,
+          "PLN_AREA_N": "BEDOK"
+        }
+      },
+      {
+        "id": "S212",
+        "deviceId": "S212",
+        "name": "S212",
+        "location": {
+          "latitude": 1.31835,
+          "longitude": 103.93574,
+          "PLN_AREA_N": "BEDOK"
+        }
+      }
+    ],
+    "readings_count": 21,
+    "rainfall_readings": [
+      {
+        "timestamp": "2025-12-12T15:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 3.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 4.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 2.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T15:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 0.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 3.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 4.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 5.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 2.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 1.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 0.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2025-12-12T16:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S113",
+            "value": 0.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
       "datetime": "2026-02-18T17:51:26+08:00",
       "PLN_AREA_N": "JURONG EAST",
       "elev_mean": 7.2,
@@ -997,7 +6104,8 @@
       "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Jurong Town Hall Road from Jurong East Street 11 to Jurong East Street 12. Please avoid the area. Issued 1751 hours.",
       "severity": "Moderate",
       "urgency": "Immediate",
-      "instruction": "Please avoid this area for the next one (1) hour."
+      "instruction": "Please avoid this area for the next one (1) hour.",
+      "source": "flood_events_extracted.json"
     },
     "rainfall_window": {
       "window_start": "2026-02-18T15:51:26+08:00",
@@ -1210,6 +6318,474 @@
   },
   {
     "flood_event": {
+      "datetime": "2026-02-18T18:04:18+08:00",
+      "PLN_AREA_N": "JURONG EAST",
+      "elev_mean": 7.2,
+      "elev_min": -6.99,
+      "elev_std": 5.76,
+      "latitude": 1.32936,
+      "longitude": 103.74325,
+      "description": "Flash flood subsided at Jurong Town Hall Road from Jurong East Street 11 to Jurong East Street 12. Issued 1804 hours.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "Flash flood subsided at At Jurong Town Hall Road From Jurong East Street 11 To Jurong East Street 12. Traffic is now passable. Issued 1804 hours.",
+      "source": "flood_events_extracted.json"
+    },
+    "rainfall_window": {
+      "window_start": "2026-02-18T16:04:18+08:00",
+      "window_end": "2026-02-18T17:49:18+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S33",
+        "deviceId": "S33",
+        "name": "Jurong Pier Road",
+        "location": {
+          "latitude": 1.3081,
+          "longitude": 103.71,
+          "PLN_AREA_N": "JURONG EAST"
+        }
+      }
+    ],
+    "readings_count": 21,
+    "rainfall_readings": [
+      {
+        "timestamp": "2026-02-18T16:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T16:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 3.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 1.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 3.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 4.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-02-18T17:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S33",
+            "value": 4.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2026-05-05T18:21:22+08:00",
+      "PLN_AREA_N": "SENGKANG",
+      "elev_mean": 14.9,
+      "elev_min": -22.87,
+      "elev_std": 6.28,
+      "latitude": 1.37603,
+      "longitude": 103.91004,
+      "description": "Flash flood subsided at KPE (towards ECP) slip road to Buangkok East Drive. Issued 1821 hours.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "Flash flood subsided at At KPE (towards ECP) Slip Road To Buangkok East Drive. Traffic is now passable. Issued 1821 hours.",
+      "source": "flood_events_extracted.json"
+    },
+    "rainfall_window": {
+      "window_start": "2026-05-05T16:21:22+08:00",
+      "window_end": "2026-05-05T18:06:22+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S204",
+        "deviceId": "S204",
+        "name": "S204",
+        "location": {
+          "latitude": 1.40081,
+          "longitude": 103.88217,
+          "PLN_AREA_N": "SENGKANG"
+        }
+      },
+      {
+        "id": "S205",
+        "deviceId": "S205",
+        "name": "S205",
+        "location": {
+          "latitude": 1.38829,
+          "longitude": 103.9116,
+          "PLN_AREA_N": "SENGKANG"
+        }
+      },
+      {
+        "id": "S220",
+        "deviceId": "S220",
+        "name": "S220",
+        "location": {
+          "latitude": 1.38666,
+          "longitude": 103.89797,
+          "PLN_AREA_N": "SENGKANG"
+        }
+      }
+    ],
+    "readings_count": 21,
+    "rainfall_readings": [
+      {
+        "timestamp": "2026-05-05T16:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T16:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T16:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T16:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T16:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T16:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T16:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 7.5
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 6.5
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 6.7
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T17:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 4.9
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T18:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 4.1
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-05T18:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S220",
+            "value": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
       "datetime": "2026-05-15T10:47:24+08:00",
       "PLN_AREA_N": "MARINE PARADE",
       "elev_mean": 7.24,
@@ -1220,7 +6796,8 @@
       "description": "[FLASH FLOOD OCCURRED]  \n\nFlash flood at Mountbatten Road (from Amber Road to Tanjong Katong Road South). Please avoid the area. Issued 1047 hours.",
       "severity": "Moderate",
       "urgency": "Immediate",
-      "instruction": "Please avoid this area for the next one (1) hour."
+      "instruction": "Please avoid this area for the next one (1) hour.",
+      "source": "flood_events_extracted.json"
     },
     "rainfall_window": {
       "window_start": "2026-05-15T08:47:24+08:00",
@@ -1426,6 +7003,230 @@
           {
             "stationId": "S78",
             "value": 1.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "flood_event": {
+      "datetime": "2026-05-15T11:03:42+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3021,
+      "longitude": 103.89763,
+      "description": "Flash flood subsided at Mountbatten Road (from Amber Road to Tanjong Katong Road South). Issued 1103 hours.",
+      "severity": "Moderate",
+      "urgency": "Immediate",
+      "instruction": "Flash flood subsided at At Mountbatten Road (from Amber Road To Tanjong Katong Road South). Traffic is now passable. Issued 1103 hours.",
+      "source": "flood_events_extracted.json"
+    },
+    "rainfall_window": {
+      "window_start": "2026-05-15T09:03:42+08:00",
+      "window_end": "2026-05-15T10:48:42+08:00"
+    },
+    "pln_area_sensors": [
+      {
+        "id": "S78",
+        "deviceId": "S78",
+        "name": "Poole Road",
+        "location": {
+          "latitude": 1.30703,
+          "longitude": 103.89067,
+          "PLN_AREA_N": "MARINE PARADE"
+        }
+      }
+    ],
+    "readings_count": 21,
+    "rainfall_readings": [
+      {
+        "timestamp": "2026-05-15T09:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.8
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 2.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 2.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 4.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 5.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 4.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 7.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:50:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 3.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T09:55:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 4.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:00:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 4.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:05:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 3.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:10:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 5.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:15:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 3.6
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:20:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 4.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:25:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:30:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 1.4
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:35:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:40:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-05-15T10:45:00+08:00",
+        "data": [
+          {
+            "stationId": "S78",
+            "value": 0.6
           }
         ]
       }

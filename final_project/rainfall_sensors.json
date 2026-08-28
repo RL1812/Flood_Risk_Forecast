@@ -1,272 +1,22 @@
 [
   {
-    "id": "S219",
-    "deviceId": "S219",
-    "name": "Yio Chu Kang Road",
+    "id": "S77",
+    "deviceId": "S77",
+    "name": "Alexandra Road",
     "location": {
-      "latitude": 1.37999,
-      "longitude": 103.87643,
-      "PLN_AREA_N": "SERANGOON"
+      "latitude": 1.2937,
+      "longitude": 103.8125,
+      "PLN_AREA_N": "QUEENSTOWN"
     }
   },
   {
-    "id": "S216",
-    "deviceId": "S216",
-    "name": "Ang Mo Kio Avenue 10",
+    "id": "S109",
+    "deviceId": "S109",
+    "name": "Ang Mo Kio Avenue 5",
     "location": {
-      "latitude": 1.36019,
-      "longitude": 103.85335,
+      "latitude": 1.3764,
+      "longitude": 103.8492,
       "PLN_AREA_N": "ANG MO KIO"
-    }
-  },
-  {
-    "id": "S217",
-    "deviceId": "S217",
-    "name": "Bishan Street 13",
-    "location": {
-      "latitude": 1.35041,
-      "longitude": 103.85526,
-      "PLN_AREA_N": "BISHAN"
-    }
-  },
-  {
-    "id": "S214",
-    "deviceId": "S214",
-    "name": "Tanjong Rhu",
-    "location": {
-      "latitude": 1.29911,
-      "longitude": 103.88289,
-      "PLN_AREA_N": "KALLANG"
-    }
-  },
-  {
-    "id": "S215",
-    "deviceId": "S215",
-    "name": "Geylang East Central",
-    "location": {
-      "latitude": 1.32785,
-      "longitude": 103.88899,
-      "PLN_AREA_N": "GEYLANG"
-    }
-  },
-  {
-    "id": "S213",
-    "deviceId": "S213",
-    "name": "Coronation Walk",
-    "location": {
-      "latitude": 1.32427,
-      "longitude": 103.8097,
-      "PLN_AREA_N": "BUKIT TIMAH"
-    }
-  },
-  {
-    "id": "S81",
-    "deviceId": "S81",
-    "name": "Punggol Central",
-    "location": {
-      "latitude": 1.4029,
-      "longitude": 103.9092,
-      "PLN_AREA_N": "PUNGGOL"
-    }
-  },
-  {
-    "id": "S40",
-    "deviceId": "S40",
-    "name": "Mandai Lake Road",
-    "location": {
-      "latitude": 1.4044,
-      "longitude": 103.78962,
-      "PLN_AREA_N": "CENTRAL WATER CATCHMENT"
-    }
-  },
-  {
-    "id": "S84",
-    "deviceId": "S84",
-    "name": "Simei Avenue",
-    "location": {
-      "latitude": 1.3437,
-      "longitude": 103.9444,
-      "PLN_AREA_N": "TAMPINES"
-    }
-  },
-  {
-    "id": "S44",
-    "deviceId": "S44",
-    "name": "Nanyang Avenue",
-    "location": {
-      "latitude": 1.34583,
-      "longitude": 103.68166,
-      "PLN_AREA_N": "WESTERN WATER CATCHMENT"
-    }
-  },
-  {
-    "id": "S88",
-    "deviceId": "S88",
-    "name": "Toa Payoh North",
-    "location": {
-      "latitude": 1.3427,
-      "longitude": 103.8482,
-      "PLN_AREA_N": "TOA PAYOH"
-    }
-  },
-  {
-    "id": "S221",
-    "deviceId": "S221",
-    "name": "Hougang Avenue 1",
-    "location": {
-      "latitude": 1.35691,
-      "longitude": 103.89088,
-      "PLN_AREA_N": "HOUGANG"
-    }
-  },
-  {
-    "id": "S222",
-    "deviceId": "S222",
-    "name": "Henderson Road",
-    "location": {
-      "latitude": 1.28987,
-      "longitude": 103.82364,
-      "PLN_AREA_N": "BUKIT MERAH"
-    }
-  },
-  {
-    "id": "S08",
-    "deviceId": "S08",
-    "name": "Upper Thomson Road",
-    "location": {
-      "latitude": 1.3701,
-      "longitude": 103.8271,
-      "PLN_AREA_N": "CENTRAL WATER CATCHMENT"
-    }
-  },
-  {
-    "id": "S07",
-    "deviceId": "S07",
-    "name": "Lornie Road",
-    "location": {
-      "latitude": 1.3415,
-      "longitude": 103.8334,
-      "PLN_AREA_N": "CENTRAL WATER CATCHMENT"
-    }
-  },
-  {
-    "id": "S220",
-    "deviceId": "S220",
-    "name": "Compassvale Lane",
-    "location": {
-      "latitude": 1.38666,
-      "longitude": 103.89797,
-      "PLN_AREA_N": "SENGKANG"
-    }
-  },
-  {
-    "id": "S208",
-    "deviceId": "S208",
-    "name": "Changi East Close",
-    "location": {
-      "latitude": 1.3136,
-      "longitude": 104.00317,
-      "PLN_AREA_N": "CHANGI"
-    }
-  },
-  {
-    "id": "S203",
-    "deviceId": "S203",
-    "name": "Pasir Panjang",
-    "location": {
-      "latitude": 1.29164,
-      "longitude": 103.7702,
-      "PLN_AREA_N": "QUEENSTOWN"
-    }
-  },
-  {
-    "id": "S201",
-    "deviceId": "S201",
-    "name": "Clementi Park",
-    "location": {
-      "latitude": 1.32311,
-      "longitude": 103.76714,
-      "PLN_AREA_N": "CLEMENTI"
-    }
-  },
-  {
-    "id": "S90",
-    "deviceId": "S90",
-    "name": "Bukit Timah Road",
-    "location": {
-      "latitude": 1.3191,
-      "longitude": 103.8191,
-      "PLN_AREA_N": "TANGLIN"
-    }
-  },
-  {
-    "id": "S92",
-    "deviceId": "S92",
-    "name": "South Buona Vista Road",
-    "location": {
-      "latitude": 1.2841,
-      "longitude": 103.7886,
-      "PLN_AREA_N": "QUEENSTOWN"
-    }
-  },
-  {
-    "id": "S209",
-    "deviceId": "S209",
-    "name": "Yishun Ring Road",
-    "location": {
-      "latitude": 1.42111,
-      "longitude": 103.84472,
-      "PLN_AREA_N": "YISHUN"
-    }
-  },
-  {
-    "id": "S50",
-    "deviceId": "S50",
-    "name": "Clementi Road",
-    "location": {
-      "latitude": 1.3337,
-      "longitude": 103.7768,
-      "PLN_AREA_N": "BUKIT TIMAH"
-    }
-  },
-  {
-    "id": "S94",
-    "deviceId": "S94",
-    "name": "Pasir Ris Street 51",
-    "location": {
-      "latitude": 1.3662,
-      "longitude": 103.9528,
-      "PLN_AREA_N": "PASIR RIS"
-    }
-  },
-  {
-    "id": "S210",
-    "deviceId": "S210",
-    "name": "Woodlands Centre",
-    "location": {
-      "latitude": 1.44003,
-      "longitude": 103.76904,
-      "PLN_AREA_N": "WOODLANDS"
-    }
-  },
-  {
-    "id": "S211",
-    "deviceId": "S211",
-    "name": "Kranji Road",
-    "location": {
-      "latitude": 1.42918,
-      "longitude": 103.75711,
-      "PLN_AREA_N": "SUNGEI KADUT"
-    }
-  },
-  {
-    "id": "S119",
-    "deviceId": "S119",
-    "name": "Nicoll Highway",
-    "location": {
-      "latitude": 1.30105,
-      "longitude": 103.8666,
-      "PLN_AREA_N": "DOWNTOWN CORE"
     }
   },
   {
@@ -280,6 +30,136 @@
     }
   },
   {
+    "id": "S64",
+    "deviceId": "S64",
+    "name": "Bukit Panjang Road",
+    "location": {
+      "latitude": 1.3824,
+      "longitude": 103.7603,
+      "PLN_AREA_N": "BUKIT PANJANG"
+    }
+  },
+  {
+    "id": "S90",
+    "deviceId": "S90",
+    "name": "Bukit Timah Road",
+    "location": {
+      "latitude": 1.3191,
+      "longitude": 103.8191,
+      "PLN_AREA_N": "TANGLIN"
+    }
+  },
+  {
+    "id": "S114",
+    "deviceId": "S114",
+    "name": "Choa Chu Kang Avenue 4",
+    "location": {
+      "latitude": 1.38,
+      "longitude": 103.73,
+      "PLN_AREA_N": "WESTERN WATER CATCHMENT"
+    }
+  },
+  {
+    "id": "S50",
+    "deviceId": "S50",
+    "name": "Clementi Road",
+    "location": {
+      "latitude": 1.3337,
+      "longitude": 103.7768,
+      "PLN_AREA_N": "BUKIT TIMAH"
+    }
+  },
+  {
+    "id": "S107",
+    "deviceId": "S107",
+    "name": "East Coast Parkway",
+    "location": {
+      "latitude": 1.3135,
+      "longitude": 103.9625,
+      "PLN_AREA_N": null
+    }
+  },
+  {
+    "id": "S215",
+    "deviceId": "S215",
+    "name": "GEYLANG EAST CENTRAL",
+    "location": {
+      "latitude": 1.32785,
+      "longitude": 103.88899,
+      "PLN_AREA_N": "GEYLANG"
+    }
+  },
+  {
+    "id": "S118",
+    "deviceId": "S118",
+    "name": "Handy Road",
+    "location": {
+      "latitude": 1.2994,
+      "longitude": 103.8461,
+      "PLN_AREA_N": "MUSEUM"
+    }
+  },
+  {
+    "id": "S120",
+    "deviceId": "S120",
+    "name": "Holland Road",
+    "location": {
+      "latitude": 1.30874,
+      "longitude": 103.818,
+      "PLN_AREA_N": "TANGLIN"
+    }
+  },
+  {
+    "id": "S33",
+    "deviceId": "S33",
+    "name": "Jurong Pier Road",
+    "location": {
+      "latitude": 1.3081,
+      "longitude": 103.71,
+      "PLN_AREA_N": "JURONG EAST"
+    }
+  },
+  {
+    "id": "S71",
+    "deviceId": "S71",
+    "name": "Kent Ridge Road",
+    "location": {
+      "latitude": 1.2923,
+      "longitude": 103.7815,
+      "PLN_AREA_N": "QUEENSTOWN"
+    }
+  },
+  {
+    "id": "S43",
+    "deviceId": "S43",
+    "name": "Kim Chuan Road",
+    "location": {
+      "latitude": 1.3399,
+      "longitude": 103.8878,
+      "PLN_AREA_N": "HOUGANG"
+    }
+  },
+  {
+    "id": "S66",
+    "deviceId": "S66",
+    "name": "Kranji Way",
+    "location": {
+      "latitude": 1.4387,
+      "longitude": 103.7363,
+      "PLN_AREA_N": "LIM CHU KANG"
+    }
+  },
+  {
+    "id": "S112",
+    "deviceId": "S112",
+    "name": "Lim Chu Kang Road",
+    "location": {
+      "latitude": 1.43854,
+      "longitude": 103.70131,
+      "PLN_AREA_N": "LIM CHU KANG"
+    }
+  },
+  {
     "id": "S113",
     "deviceId": "S113",
     "name": "Marine Parade Road",
@@ -287,6 +167,346 @@
       "latitude": 1.30648,
       "longitude": 103.9104,
       "PLN_AREA_N": "BEDOK"
+    }
+  },
+  {
+    "id": "S119",
+    "deviceId": "S119",
+    "name": "Nicoll Highway",
+    "location": {
+      "latitude": 1.30105,
+      "longitude": 103.8666,
+      "PLN_AREA_N": "DOWNTOWN CORE"
+    }
+  },
+  {
+    "id": "S121",
+    "deviceId": "S121",
+    "name": "Old Choa Chu Kang Road",
+    "location": {
+      "latitude": 1.37288,
+      "longitude": 103.72244,
+      "PLN_AREA_N": "WESTERN WATER CATCHMENT"
+    }
+  },
+  {
+    "id": "S35",
+    "deviceId": "S35",
+    "name": "Old Toh Tuck Road",
+    "location": {
+      "latitude": 1.3329,
+      "longitude": 103.7556,
+      "PLN_AREA_N": "CLEMENTI"
+    }
+  },
+  {
+    "id": "S94",
+    "deviceId": "S94",
+    "name": "Pasir Ris Street 51",
+    "location": {
+      "latitude": 1.3662,
+      "longitude": 103.9528,
+      "PLN_AREA_N": "PASIR RIS"
+    }
+  },
+  {
+    "id": "S78",
+    "deviceId": "S78",
+    "name": "Poole Road",
+    "location": {
+      "latitude": 1.30703,
+      "longitude": 103.89067,
+      "PLN_AREA_N": "MARINE PARADE"
+    }
+  },
+  {
+    "id": "S81",
+    "deviceId": "S81",
+    "name": "Punggol Central",
+    "location": {
+      "latitude": 1.4029,
+      "longitude": 103.9092,
+      "PLN_AREA_N": "PUNGGOL"
+    }
+  },
+  {
+    "id": "S201",
+    "deviceId": "S201",
+    "name": "S201",
+    "location": {
+      "latitude": 1.32311,
+      "longitude": 103.76714,
+      "PLN_AREA_N": "CLEMENTI"
+    }
+  },
+  {
+    "id": "S203",
+    "deviceId": "S203",
+    "name": "S203",
+    "location": {
+      "latitude": 1.29164,
+      "longitude": 103.7702,
+      "PLN_AREA_N": "QUEENSTOWN"
+    }
+  },
+  {
+    "id": "S204",
+    "deviceId": "S204",
+    "name": "S204",
+    "location": {
+      "latitude": 1.40081,
+      "longitude": 103.88217,
+      "PLN_AREA_N": "SENGKANG"
+    }
+  },
+  {
+    "id": "S205",
+    "deviceId": "S205",
+    "name": "S205",
+    "location": {
+      "latitude": 1.38829,
+      "longitude": 103.9116,
+      "PLN_AREA_N": "SENGKANG"
+    }
+  },
+  {
+    "id": "S207",
+    "deviceId": "S207",
+    "name": "S207",
+    "location": {
+      "latitude": 1.32485,
+      "longitude": 103.95836,
+      "PLN_AREA_N": "TAMPINES"
+    }
+  },
+  {
+    "id": "S208",
+    "deviceId": "S208",
+    "name": "S208",
+    "location": {
+      "latitude": 1.3136,
+      "longitude": 104.00317,
+      "PLN_AREA_N": "CHANGI"
+    }
+  },
+  {
+    "id": "S209",
+    "deviceId": "S209",
+    "name": "S209",
+    "location": {
+      "latitude": 1.42111,
+      "longitude": 103.84472,
+      "PLN_AREA_N": "YISHUN"
+    }
+  },
+  {
+    "id": "S210",
+    "deviceId": "S210",
+    "name": "S210",
+    "location": {
+      "latitude": 1.44003,
+      "longitude": 103.76904,
+      "PLN_AREA_N": "WOODLANDS"
+    }
+  },
+  {
+    "id": "S211",
+    "deviceId": "S211",
+    "name": "S211",
+    "location": {
+      "latitude": 1.42918,
+      "longitude": 103.75711,
+      "PLN_AREA_N": "SUNGEI KADUT"
+    }
+  },
+  {
+    "id": "S212",
+    "deviceId": "S212",
+    "name": "S212",
+    "location": {
+      "latitude": 1.31835,
+      "longitude": 103.93574,
+      "PLN_AREA_N": "BEDOK"
+    }
+  },
+  {
+    "id": "S213",
+    "deviceId": "S213",
+    "name": "S213",
+    "location": {
+      "latitude": 1.32427,
+      "longitude": 103.8097,
+      "PLN_AREA_N": "BUKIT TIMAH"
+    }
+  },
+  {
+    "id": "S214",
+    "deviceId": "S214",
+    "name": "S214",
+    "location": {
+      "latitude": 1.29911,
+      "longitude": 103.88289,
+      "PLN_AREA_N": "KALLANG"
+    }
+  },
+  {
+    "id": "S216",
+    "deviceId": "S216",
+    "name": "S216",
+    "location": {
+      "latitude": 1.36019,
+      "longitude": 103.85335,
+      "PLN_AREA_N": "ANG MO KIO"
+    }
+  },
+  {
+    "id": "S217",
+    "deviceId": "S217",
+    "name": "S217",
+    "location": {
+      "latitude": 1.35041,
+      "longitude": 103.85526,
+      "PLN_AREA_N": "BISHAN"
+    }
+  },
+  {
+    "id": "S218",
+    "deviceId": "S218",
+    "name": "S218",
+    "location": {
+      "latitude": 1.36491,
+      "longitude": 103.75065,
+      "PLN_AREA_N": "BUKIT BATOK"
+    }
+  },
+  {
+    "id": "S219",
+    "deviceId": "S219",
+    "name": "S219",
+    "location": {
+      "latitude": 1.37999,
+      "longitude": 103.87643,
+      "PLN_AREA_N": "SERANGOON"
+    }
+  },
+  {
+    "id": "S220",
+    "deviceId": "S220",
+    "name": "S220",
+    "location": {
+      "latitude": 1.38666,
+      "longitude": 103.89797,
+      "PLN_AREA_N": "SENGKANG"
+    }
+  },
+  {
+    "id": "S221",
+    "deviceId": "S221",
+    "name": "S221",
+    "location": {
+      "latitude": 1.35691,
+      "longitude": 103.89088,
+      "PLN_AREA_N": "HOUGANG"
+    }
+  },
+  {
+    "id": "S222",
+    "deviceId": "S222",
+    "name": "S222",
+    "location": {
+      "latitude": 1.28987,
+      "longitude": 103.82364,
+      "PLN_AREA_N": "BUKIT MERAH"
+    }
+  },
+  {
+    "id": "S223",
+    "deviceId": "S223",
+    "name": "S223",
+    "location": {
+      "latitude": 1.29984,
+      "longitude": 103.80264,
+      "PLN_AREA_N": "QUEENSTOWN"
+    }
+  },
+  {
+    "id": "S224",
+    "deviceId": "S224",
+    "name": "S224",
+    "location": {
+      "latitude": 1.34392,
+      "longitude": 103.98409,
+      "PLN_AREA_N": "CHANGI"
+    }
+  },
+  {
+    "id": "S226",
+    "deviceId": "S226",
+    "name": "S226",
+    "location": {
+      "latitude": 1.27472,
+      "longitude": 103.80389,
+      "PLN_AREA_N": "BUKIT MERAH"
+    }
+  },
+  {
+    "id": "S227",
+    "deviceId": "S227",
+    "name": "S227",
+    "location": {
+      "latitude": 1.43944,
+      "longitude": 103.80389,
+      "PLN_AREA_N": "WOODLANDS"
+    }
+  },
+  {
+    "id": "S228",
+    "deviceId": "S228",
+    "name": "S228",
+    "location": {
+      "latitude": 1.34703,
+      "longitude": 103.70073,
+      "PLN_AREA_N": "JURONG WEST"
+    }
+  },
+  {
+    "id": "S229",
+    "deviceId": "S229",
+    "name": "S229",
+    "location": {
+      "latitude": 1.35167,
+      "longitude": 103.72195,
+      "PLN_AREA_N": "JURONG WEST"
+    }
+  },
+  {
+    "id": "S230",
+    "deviceId": "S230",
+    "name": "S230",
+    "location": {
+      "latitude": 1.30167,
+      "longitude": 103.76444,
+      "PLN_AREA_N": "CLEMENTI"
+    }
+  },
+  {
+    "id": "S111",
+    "deviceId": "S111",
+    "name": "Scotts Road",
+    "location": {
+      "latitude": 1.31055,
+      "longitude": 103.8365,
+      "PLN_AREA_N": "NEWTON"
+    }
+  },
+  {
+    "id": "S900",
+    "deviceId": "S900",
+    "name": "Seletar Aerospace View",
+    "location": {
+      "latitude": 1.41284,
+      "longitude": 103.86922,
+      "PLN_AREA_N": "SELETAR"
     }
   },
   {
@@ -300,23 +520,63 @@
     }
   },
   {
-    "id": "S64",
-    "deviceId": "S64",
-    "name": "Bukit Panjang Road",
+    "id": "S84",
+    "deviceId": "S84",
+    "name": "Simei Avenue",
     "location": {
-      "latitude": 1.3824,
-      "longitude": 103.7603,
-      "PLN_AREA_N": "BUKIT PANJANG"
+      "latitude": 1.3437,
+      "longitude": 103.9444,
+      "PLN_AREA_N": "TAMPINES"
     }
   },
   {
-    "id": "S66",
-    "deviceId": "S66",
-    "name": "Kranji Way",
+    "id": "S79",
+    "deviceId": "S79",
+    "name": "Somerset Road",
     "location": {
-      "latitude": 1.4387,
-      "longitude": 103.7363,
-      "PLN_AREA_N": "LIM CHU KANG"
+      "latitude": 1.3004,
+      "longitude": 103.8372,
+      "PLN_AREA_N": "ORCHARD"
+    }
+  },
+  {
+    "id": "S88",
+    "deviceId": "S88",
+    "name": "Toa Payoh North",
+    "location": {
+      "latitude": 1.3427,
+      "longitude": 103.8482,
+      "PLN_AREA_N": "TOA PAYOH"
+    }
+  },
+  {
+    "id": "S123",
+    "deviceId": "S123",
+    "name": "Towner Road",
+    "location": {
+      "latitude": 1.3214,
+      "longitude": 103.8577,
+      "PLN_AREA_N": "KALLANG"
+    }
+  },
+  {
+    "id": "S89",
+    "deviceId": "S89",
+    "name": "Tuas Road",
+    "location": {
+      "latitude": 1.31985,
+      "longitude": 103.66162,
+      "PLN_AREA_N": "PIONEER"
+    }
+  },
+  {
+    "id": "S115",
+    "deviceId": "S115",
+    "name": "Tuas South Avenue 3",
+    "location": {
+      "latitude": 1.29377,
+      "longitude": 103.61843,
+      "PLN_AREA_N": "TUAS"
     }
   },
   {
@@ -340,103 +600,13 @@
     }
   },
   {
-    "id": "S123",
-    "deviceId": "S123",
-    "name": "Towner Road",
+    "id": "S08",
+    "deviceId": "S08",
+    "name": "Upper Thomson Road",
     "location": {
-      "latitude": 1.3214,
-      "longitude": 103.8577,
-      "PLN_AREA_N": "KALLANG"
-    }
-  },
-  {
-    "id": "S29",
-    "deviceId": "S29",
-    "name": "Pasir Ris Drive 12",
-    "location": {
-      "latitude": 1.387,
-      "longitude": 103.935,
-      "PLN_AREA_N": "PASIR RIS"
-    }
-  },
-  {
-    "id": "S121",
-    "deviceId": "S121",
-    "name": "Old Choa Chu Kang Road",
-    "location": {
-      "latitude": 1.37288,
-      "longitude": 103.72244,
-      "PLN_AREA_N": "WESTERN WATER CATCHMENT"
-    }
-  },
-  {
-    "id": "S229",
-    "deviceId": "S229",
-    "name": "Jurong West Street 42",
-    "location": {
-      "latitude": 1.35167,
-      "longitude": 103.72195,
-      "PLN_AREA_N": "JURONG WEST"
-    }
-  },
-  {
-    "id": "S900",
-    "deviceId": "S900",
-    "name": "Seletar Aerospace View",
-    "location": {
-      "latitude": 1.41284,
-      "longitude": 103.86922,
-      "PLN_AREA_N": "SELETAR"
-    }
-  },
-  {
-    "id": "S109",
-    "deviceId": "S109",
-    "name": "Ang Mo Kio Avenue 5",
-    "location": {
-      "latitude": 1.3764,
-      "longitude": 103.8492,
-      "PLN_AREA_N": "ANG MO KIO"
-    }
-  },
-  {
-    "id": "S106",
-    "deviceId": "S106",
-    "name": "Pulau Ubin",
-    "location": {
-      "latitude": 1.4168,
-      "longitude": 103.9673,
-      "PLN_AREA_N": "NORTH-EASTERN ISLANDS"
-    }
-  },
-  {
-    "id": "S227",
-    "deviceId": "S227",
-    "name": "Woodlands Drive 62",
-    "location": {
-      "latitude": 1.43944,
-      "longitude": 103.80389,
-      "PLN_AREA_N": "WOODLANDS"
-    }
-  },
-  {
-    "id": "S107",
-    "deviceId": "S107",
-    "name": "East Coast Parkway",
-    "location": {
-      "latitude": 1.3135,
-      "longitude": 103.9625,
-      "PLN_AREA_N": null
-    }
-  },
-  {
-    "id": "S228",
-    "deviceId": "S228",
-    "name": "Jurong West Street 73",
-    "location": {
-      "latitude": 1.34703,
-      "longitude": 103.70073,
-      "PLN_AREA_N": "JURONG WEST"
+      "latitude": 1.3701,
+      "longitude": 103.8271,
+      "PLN_AREA_N": "CENTRAL WATER CATCHMENT"
     }
   },
   {
@@ -447,126 +617,6 @@
       "latitude": 1.44387,
       "longitude": 103.78538,
       "PLN_AREA_N": "WOODLANDS"
-    }
-  },
-  {
-    "id": "S226",
-    "deviceId": "S226",
-    "name": "Malan Road",
-    "location": {
-      "latitude": 1.27472,
-      "longitude": 103.80389,
-      "PLN_AREA_N": "BUKIT MERAH"
-    }
-  },
-  {
-    "id": "S102",
-    "deviceId": "S102",
-    "name": "Semakau Landfill",
-    "location": {
-      "latitude": 1.189,
-      "longitude": 103.768,
-      "PLN_AREA_N": "WESTERN ISLANDS"
-    }
-  },
-  {
-    "id": "S223",
-    "deviceId": "S223",
-    "name": "Margaret Drive",
-    "location": {
-      "latitude": 1.29984,
-      "longitude": 103.80264,
-      "PLN_AREA_N": "QUEENSTOWN"
-    }
-  },
-  {
-    "id": "S224",
-    "deviceId": "S224",
-    "name": "Airport Boulevard",
-    "location": {
-      "latitude": 1.34392,
-      "longitude": 103.98409,
-      "PLN_AREA_N": "CHANGI"
-    }
-  },
-  {
-    "id": "S71",
-    "deviceId": "S71",
-    "name": "Kent Ridge Road",
-    "location": {
-      "latitude": 1.2923,
-      "longitude": 103.7815,
-      "PLN_AREA_N": "QUEENSTOWN"
-    }
-  },
-  {
-    "id": "S33",
-    "deviceId": "S33",
-    "name": "Jurong Pier Road",
-    "location": {
-      "latitude": 1.3081,
-      "longitude": 103.71,
-      "PLN_AREA_N": "JURONG EAST"
-    }
-  },
-  {
-    "id": "S77",
-    "deviceId": "S77",
-    "name": "Alexandra Road",
-    "location": {
-      "latitude": 1.2937,
-      "longitude": 103.8125,
-      "PLN_AREA_N": "QUEENSTOWN"
-    }
-  },
-  {
-    "id": "S79",
-    "deviceId": "S79",
-    "name": "Somerset Road",
-    "location": {
-      "latitude": 1.3004,
-      "longitude": 103.8372,
-      "PLN_AREA_N": "ORCHARD"
-    }
-  },
-  {
-    "id": "S78",
-    "deviceId": "S78",
-    "name": "Poole Road",
-    "location": {
-      "latitude": 1.30703,
-      "longitude": 103.89067,
-      "PLN_AREA_N": "MARINE PARADE"
-    }
-  },
-  {
-    "id": "S111",
-    "deviceId": "S111",
-    "name": "Scotts Road",
-    "location": {
-      "latitude": 1.31055,
-      "longitude": 103.8365,
-      "PLN_AREA_N": "NEWTON"
-    }
-  },
-  {
-    "id": "S112",
-    "deviceId": "S112",
-    "name": "Lim Chu Kang Road",
-    "location": {
-      "latitude": 1.43854,
-      "longitude": 103.70131,
-      "PLN_AREA_N": "LIM CHU KANG"
-    }
-  },
-  {
-    "id": "S230",
-    "deviceId": "S230",
-    "name": "West Coast Road",
-    "location": {
-      "latitude": 1.30167,
-      "longitude": 103.76444,
-      "PLN_AREA_N": "CLEMENTI"
     }
   }
 ]

@@ -3,18 +3,16 @@
 Fetch Rainfall Data for Flood Events in Singapore from Data.gov.sg API.
 
 This script:
-1. Reads flood_events_extracted.json to extract the flood occurrence time,
-   PLN_AREA_N value, and coordinates (longitude & latitude).
-2. Performs a trial API request using the date of the first flood event to obtain
-   water/rainfall sensor metadata from the 'stations' parameter.
-3. Enriches the sensor location data with PLN_AREA_N from enriched_planning_areas.geojson
-   and saves them into a standalone JSON file (rainfall_sensors.json).
-4. For each flood event, fetches rainfall readings for the time window 2 hours
-   before the flooding alert until 15 minutes before the flooding alert, keeping only the
-   records for sensors that fall within that event's planning area.
-5. Adds elevation statistics (elev_mean, elev_min, elev_std) of the planning area (PLN_AREA_N)
-   into the generated flood_rainfall_records.json.
-6. Saves the filtered rainfall records into a new JSON file (flood_rainfall_records.json).
+1. Reads flood events from both `flood_events_extracted.json` AND `cna_flood_events_2023_2025.json`
+   to extract flood occurrence datetimes, PLN_AREA_N values, and coordinates.
+2. Performs trial/initial API requests to obtain rainfall sensor metadata from the 'stations' parameter.
+3. Enriches the sensor location data with PLN_AREA_N from `enriched_planning_areas.geojson`
+   and saves them into a standalone JSON file (`rainfall_sensors.json`).
+4. For each flood event, fetches rainfall readings for the time window:
+   2 hours before the flooding alert until 15 minutes before the flooding alert,
+   keeping only the records for sensors that fall within that event's planning area.
+5. Adds elevation statistics (elev_mean, elev_min, elev_std) of the planning area (PLN_AREA_N).
+6. Saves the filtered rainfall records into `flood_rainfall_records.json`.
 """
 
 import os
@@ -23,7 +21,7 @@ import json
 import time
 import argparse
 import datetime
-from typing import Optional, Dict, Any, List, Set
+from typing import Optional, Dict, Any, List, Set, Tuple
 import requests
 import geopandas as gpd
 from shapely.geometry import Point
@@ -63,7 +61,7 @@ def find_file(candidate_names: List[str], base_dirs: List[str]) -> Optional[str]
     return None
 
 
-def get_default_paths():
+def get_default_paths() -> Tuple[Optional[str], Optional[str], Optional[str], str, str]:
     """Determine default file paths based on script location and current working directory."""
     script_dir = os.path.dirname(os.path.abspath(__file__))
     cwd = os.getcwd()
@@ -76,19 +74,18 @@ def get_default_paths():
             seen.add(d)
             unique_search_dirs.append(d)
 
-    flood_candidates = ["flood_events_extracted.json", "flood_events.json"]
-    geojson_candidates = [
+    flood_path = find_file(["flood_events_extracted.json", "flood_events.json"], unique_search_dirs)
+    cna_path = find_file(["cna_flood_events_2023_2025.json", "cna_flood_events.json"], unique_search_dirs)
+    geojson_path = find_file([
         "enriched_planning_areas.geojson",
         "enriched_plan_areas.geojson",
         "MasterPlan2019PlanningAreaBoundaryNoSea.geojson"
-    ]
+    ], unique_search_dirs)
 
-    flood_path = find_file(flood_candidates, unique_search_dirs)
-    geojson_path = find_file(geojson_candidates, unique_search_dirs)
     sensors_out = os.path.join(script_dir, "rainfall_sensors.json")
     rainfall_out = os.path.join(script_dir, "flood_rainfall_records.json")
 
-    return flood_path, geojson_path, sensors_out, rainfall_out
+    return flood_path, cna_path, geojson_path, sensors_out, rainfall_out
 
 
 def get_api_headers() -> Dict[str, str]:
@@ -214,69 +211,160 @@ def fetch_day_rainfall_readings(
     return {"stations": stations, "readings": all_readings}
 
 
+def parse_raw_flood_records(
+    primary_flood_path: Optional[str],
+    cna_flood_path: Optional[str]
+) -> List[Dict[str, Any]]:
+    """
+    Load and unify flood events from both flood_events_extracted.json and cna_flood_events_2023_2025.json.
+    Deduplicates events by (datetime, PLN_AREA_N).
+    """
+    raw_event_entries = []
+
+    # 1. Load primary flood events (e.g. flood_events_extracted.json)
+    if primary_flood_path and os.path.exists(primary_flood_path):
+        print(f"Loading primary flood events from: {primary_flood_path}")
+        try:
+            with open(primary_flood_path, "r", encoding="utf-8") as f:
+                primary_events = json.load(f)
+            for ev in primary_events:
+                # Handle root or nested event
+                event_data = ev.get("flood_event", ev)
+                dt_str = event_data.get("datetime")
+                if not dt_str:
+                    continue
+                loc = event_data.get("location", {})
+                if not isinstance(loc, dict):
+                    loc = {}
+                pln = loc.get("PLN_AREA_N") or event_data.get("PLN_AREA_N")
+                lat = loc.get("latitude") if loc.get("latitude") is not None else event_data.get("latitude")
+                lon = loc.get("longitude") if loc.get("longitude") is not None else event_data.get("longitude")
+
+                raw_event_entries.append({
+                    "datetime_str": dt_str,
+                    "PLN_AREA_N": pln,
+                    "latitude": lat,
+                    "longitude": lon,
+                    "description": event_data.get("description", ""),
+                    "severity": event_data.get("severity", "Moderate"),
+                    "urgency": event_data.get("urgency", "Immediate"),
+                    "instruction": event_data.get("instruction", ""),
+                    "source": "flood_events_extracted.json",
+                    "raw_event": event_data
+                })
+        except Exception as e:
+            print(f"  [Warn] Failed reading {primary_flood_path}: {e}")
+
+    # 2. Load CNA flood events (cna_flood_events_2023_2025.json)
+    if cna_flood_path and os.path.exists(cna_flood_path):
+        print(f"Loading CNA flood events from: {cna_flood_path}")
+        try:
+            with open(cna_flood_path, "r", encoding="utf-8") as f:
+                cna_events = json.load(f)
+            for ev in cna_events:
+                event_data = ev.get("flood_event", ev)
+                dt_str = event_data.get("datetime")
+                if not dt_str:
+                    continue
+                loc = event_data.get("location", {})
+                if not isinstance(loc, dict):
+                    loc = {}
+                pln = loc.get("PLN_AREA_N") or event_data.get("PLN_AREA_N")
+                lat = loc.get("latitude") if loc.get("latitude") is not None else event_data.get("latitude")
+                lon = loc.get("longitude") if loc.get("longitude") is not None else event_data.get("longitude")
+
+                raw_event_entries.append({
+                    "datetime_str": dt_str,
+                    "PLN_AREA_N": pln,
+                    "latitude": lat,
+                    "longitude": lon,
+                    "description": event_data.get("description", event_data.get("location_name", "")),
+                    "severity": event_data.get("severity", "Moderate"),
+                    "urgency": event_data.get("urgency", "Immediate"),
+                    "instruction": event_data.get("instruction", ""),
+                    "source": "cna_flood_events_2023_2025.json",
+                    "raw_event": event_data
+                })
+        except Exception as e:
+            print(f"  [Warn] Failed reading {cna_flood_path}: {e}")
+
+    # Deduplicate by (datetime[:16], PLN_AREA_N)
+    unique_events = []
+    seen_keys = set()
+
+    for item in raw_event_entries:
+        dt_str = item["datetime_str"]
+        pln = str(item["PLN_AREA_N"]).strip().upper() if item["PLN_AREA_N"] else "UNKNOWN"
+        dedup_key = (dt_str[:16], pln)
+
+        if dedup_key not in seen_keys:
+            seen_keys.add(dedup_key)
+            try:
+                dt_obj = datetime.datetime.fromisoformat(dt_str)
+            except Exception:
+                continue
+
+            unique_events.append({
+                "datetime_str": dt_str,
+                "datetime_obj": dt_obj,
+                "date_str": dt_obj.strftime("%Y-%m-%d"),
+                "PLN_AREA_N": item["PLN_AREA_N"],
+                "latitude": item["latitude"],
+                "longitude": item["longitude"],
+                "description": item["description"],
+                "severity": item["severity"],
+                "urgency": item["urgency"],
+                "instruction": item["instruction"],
+                "source": item["source"],
+                "raw_event": item["raw_event"]
+            })
+
+    # Sort chronologically
+    unique_events.sort(key=lambda x: x["datetime_obj"])
+    for idx, ev in enumerate(unique_events):
+        ev["index"] = idx + 1
+
+    return unique_events
+
+
 def process_rainfall_pipeline(
-    flood_json_path: str,
+    flood_json_path: Optional[str],
+    cna_json_path: Optional[str],
     geojson_path: str,
     sensors_out_path: str,
     rainfall_out_path: str,
     start_hours_before: float = 2.0,
     end_minutes_before: float = 15.0
 ):
-    """Run full pipeline steps 1 to 4."""
+    """Run full rainfall fetching pipeline for all combined flood records."""
     load_env_file()
     headers = get_api_headers()
 
-    print("=" * 70)
-    print("STEP 1: Reading extracted flood records")
-    print("=" * 70)
-    if not os.path.exists(flood_json_path):
-        raise FileNotFoundError(f"Flood events JSON not found: {flood_json_path}")
+    print("=" * 80)
+    print("STEP 1: Reading and unifying flood records")
+    print("=" * 80)
+    extracted_flood_info = parse_raw_flood_records(flood_json_path, cna_json_path)
 
-    with open(flood_json_path, "r", encoding="utf-8") as f:
-        flood_events = json.load(f)
-
-    extracted_flood_info = []
-    for idx, ev in enumerate(flood_events):
-        dt_str = ev.get("datetime")
-        if not dt_str:
-            continue
-        
-        # Parse ISO datetime
-        dt_obj = datetime.datetime.fromisoformat(dt_str)
-        loc = ev.get("location", {})
-        pln_area = loc.get("PLN_AREA_N") if isinstance(loc, dict) else None
-        lat = loc.get("latitude") if isinstance(loc, dict) else ev.get("latitude")
-        lon = loc.get("longitude") if isinstance(loc, dict) else ev.get("longitude")
-
-        flood_entry = {
-            "index": idx + 1,
-            "datetime_str": dt_str,
-            "datetime_obj": dt_obj,
-            "date_str": dt_obj.strftime("%Y-%m-%d"),
-            "PLN_AREA_N": pln_area,
-            "latitude": lat,
-            "longitude": lon,
-            "raw_event": ev
-        }
-        extracted_flood_info.append(flood_entry)
-        print(f"  [{idx+1}] Time: {dt_str} | PLN_AREA_N: {pln_area} | Lat: {lat}, Lon: {lon}")
+    print(f"\nTotal unified unique flood events to process: {len(extracted_flood_info)}")
+    for ev in extracted_flood_info:
+        print(f"  [{ev['index']:2d}] {ev['datetime_str']} | PLN_AREA_N: {str(ev['PLN_AREA_N']):<20} | Src: {ev['source']}")
 
     if not extracted_flood_info:
         print("No valid flood events found to process.")
         return
 
-    print("\n" + "=" * 70)
-    print("STEP 2: Trial API request using date of the first flood event")
-    print("=" * 70)
+    print("\n" + "=" * 80)
+    print("STEP 2: Initial API request to obtain rainfall sensors metadata")
+    print("=" * 80)
     first_event_date = extracted_flood_info[0]["date_str"]
-    print(f"Executing trial request for first flood date: {first_event_date}")
+    print(f"Executing trial request for date: {first_event_date}")
     trial_result = fetch_day_rainfall_readings(first_event_date, headers=headers)
     raw_stations = trial_result.get("stations", [])
     print(f"Successfully retrieved {len(raw_stations)} sensors from API 'stations' parameter.")
 
-    print("\n" + "=" * 70)
-    print("STEP 3: Enriching sensors with PLN_AREA_N and saving standalone JSON")
-    print("=" * 70)
+    print("\n" + "=" * 80)
+    print("STEP 3: Enriching sensors with PLN_AREA_N from GeoJSON")
+    print("=" * 80)
     print(f"Loading planning area boundaries from: {geojson_path}")
     gdf = load_planning_areas(geojson_path)
     print(f"Loaded {len(gdf)} planning area shapes.")
@@ -318,11 +406,11 @@ def process_rainfall_pipeline(
         json.dump(enriched_sensors, f, indent=2, ensure_ascii=False)
     print(f"Saved {len(enriched_sensors)} enriched sensors to: {sensors_out_path}")
 
-    print("\n" + "=" * 70)
-    print(f"STEP 4: Fetching rainfall records ({start_hours_before} hrs before to {end_minutes_before} mins before flood alerts)")
-    print("=" * 70)
+    print("\n" + "=" * 80)
+    print(f"STEP 4: Fetching rainfall records ({start_hours_before}h before to {end_minutes_before}min before flood alerts)")
+    print("=" * 80)
 
-    # Cache for day readings to avoid redundant requests for events on the same date
+    # Day readings cache
     day_readings_cache: Dict[str, List[Dict[str, Any]]] = {
         first_event_date: trial_result.get("readings", [])
     }
@@ -338,7 +426,7 @@ def process_rainfall_pipeline(
             required_dates.add(curr_date.strftime("%Y-%m-%d"))
             curr_date += datetime.timedelta(days=1)
 
-    print(f"Unique dates requiring rainfall data: {sorted(required_dates)}")
+    print(f"Unique dates requiring rainfall data ({len(required_dates)} days): {sorted(required_dates)}")
     for d_str in sorted(required_dates):
         if d_str not in day_readings_cache:
             print(f"Fetching rainfall readings for date: {d_str}...")
@@ -346,7 +434,7 @@ def process_rainfall_pipeline(
             day_readings_cache[d_str] = day_data.get("readings", [])
             print(f"  Retrieved {len(day_readings_cache[d_str])} readings for {d_str}.")
 
-    # Now filter readings for each flood event
+    # Filter readings for each flood event
     flood_rainfall_results = []
 
     for ev in extracted_flood_info:
@@ -393,7 +481,6 @@ def process_rainfall_pipeline(
 
                 # Filter within time window: start <= timestamp <= end
                 if t_start <= r_dt <= t_end:
-                    # Filter sensor readings within the flood planning area
                     sensor_readings = [
                         item for item in r.get("data", [])
                         if item.get("stationId") in target_sensor_ids
@@ -404,7 +491,6 @@ def process_rainfall_pipeline(
                             "data": sensor_readings
                         })
 
-        # Sort chronologically
         event_readings.sort(key=lambda x: x["timestamp"])
 
         event_summary = {
@@ -416,10 +502,11 @@ def process_rainfall_pipeline(
                 "elev_std": elev_stats["elev_std"],
                 "latitude": ev["latitude"],
                 "longitude": ev["longitude"],
-                "description": ev["raw_event"].get("description"),
-                "severity": ev["raw_event"].get("severity"),
-                "urgency": ev["raw_event"].get("urgency"),
-                "instruction": ev["raw_event"].get("instruction")
+                "description": ev["description"],
+                "severity": ev["severity"],
+                "urgency": ev["urgency"],
+                "instruction": ev["instruction"],
+                "source": ev["source"]
             },
             "rainfall_window": {
                 "window_start": t_start.isoformat(),
@@ -432,7 +519,7 @@ def process_rainfall_pipeline(
         flood_rainfall_results.append(event_summary)
         print(f"  Extracted {len(event_readings)} rainfall readings for sensors in {pln_area}.")
 
-    # Save to output file
+    # Save output
     rainfall_dir = os.path.dirname(os.path.abspath(rainfall_out_path))
     if rainfall_dir:
         os.makedirs(rainfall_dir, exist_ok=True)
@@ -440,67 +527,70 @@ def process_rainfall_pipeline(
     with open(rainfall_out_path, "w", encoding="utf-8") as f:
         json.dump(flood_rainfall_results, f, indent=2, ensure_ascii=False)
 
-    print("\n" + "=" * 70)
-    print(f"SUCCESS: Saved all extracted rainfall records to: {rainfall_out_path}")
-    print("=" * 70)
+    print("\n" + "=" * 80)
+    print(f"SUCCESS: Saved {len(flood_rainfall_results)} flood rainfall records to: {rainfall_out_path}")
+    print("=" * 80)
 
 
 def main():
-    flood_def, geojson_def, sensors_def, rainfall_def = get_default_paths()
+    flood_def, cna_def, geojson_def, sensors_def, rainfall_def = get_default_paths()
 
     parser = argparse.ArgumentParser(
-        description="Extract rainfall data from data.gov.sg API for flood event time windows and planning areas."
+        description="Fetch rainfall data for flood events from Data.gov.sg API (including CNA 2023-2025 events)."
     )
     parser.add_argument(
-        "-f", "--flood-json",
+        "--flood-json",
+        type=str,
         default=flood_def,
-        help=f"Path to flood_events_extracted.json (default: {flood_def})"
+        help=f"Path to primary flood events JSON (default: {flood_def})"
     )
     parser.add_argument(
-        "-g", "--geojson",
+        "--cna-json",
+        type=str,
+        default=cna_def,
+        help=f"Path to CNA flood events JSON (default: {cna_def})"
+    )
+    parser.add_argument(
+        "--geojson",
+        type=str,
         default=geojson_def,
-        help=f"Path to enriched_planning_areas.geojson (default: {geojson_def})"
+        help=f"Path to enriched planning areas GeoJSON (default: {geojson_def})"
     )
     parser.add_argument(
-        "-s", "--sensors-out",
+        "--sensors-out",
+        type=str,
         default=sensors_def,
-        help=f"Output path for sensors JSON (default: {sensors_def})"
+        help=f"Path to save enriched sensors JSON (default: {sensors_def})"
     )
     parser.add_argument(
-        "-o", "--rainfall-out",
+        "--rainfall-out",
+        type=str,
         default=rainfall_def,
-        help=f"Output path for rainfall records JSON (default: {rainfall_def})"
+        help=f"Path to save output rainfall records JSON (default: {rainfall_def})"
     )
     parser.add_argument(
-        "--hours-before",
+        "--start-hours-before",
         type=float,
         default=2.0,
-        help="Hours before the flood alert for window start (default: 2.0)"
+        help="Hours before flood alert to start rainfall window (default: 2.0)"
     )
     parser.add_argument(
-        "--mins-before-end",
+        "--end-minutes-before",
         type=float,
         default=15.0,
-        help="Minutes before the flood alert for window end (default: 15.0)"
+        help="Minutes before flood alert to end rainfall window (default: 15.0)"
     )
 
     args = parser.parse_args()
 
-    if not args.flood_json or not os.path.exists(args.flood_json):
-        print(f"Error: Flood JSON file not found: {args.flood_json}", file=sys.stderr)
-        sys.exit(1)
-
-    if not args.geojson or not os.path.exists(args.geojson):
-        print(f"Error: GeoJSON file not found: {args.geojson}", file=sys.stderr)
-        sys.exit(1)
-
     process_rainfall_pipeline(
         flood_json_path=args.flood_json,
+        cna_json_path=args.cna_json,
         geojson_path=args.geojson,
         sensors_out_path=args.sensors_out,
         rainfall_out_path=args.rainfall_out,
-        start_hours_before=args.hours_before,
-        end_minutes_before=args.mins_before_end
+        start_hours_before=args.start_hours_before,
+        end_minutes_before=args.end_minutes_before
     )
 
 

@@ -1,1 +1,2 @@
 28 Aug 2026 progress: now pending transferring rainfall records & no-rainfall records into machine learning inputs & outputs. somethign like csv file maybe?
+created machine learning model but the dataset is too small so the model is not accurate. Looking for a way to include more data.

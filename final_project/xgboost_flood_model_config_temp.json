@@ -1,0 +1,77 @@
+{
+  "model_architecture": "BalancedXGBEnsemble",
+  "n_ensemble_members": 8,
+  "focal_loss_gamma": 2.0,
+  "focal_loss_alpha": 0.25,
+  "neg_ratio": 4.0,
+  "calibration_method": "isotonic",
+  "optimal_threshold": 0.03,
+  "threshold_watch": 0.03,
+  "threshold_warning": 0.12,
+  "tiered_thresholds": {
+    "watch": 0.03,
+    "warning": 0.12
+  },
+  "alert_tiers": {
+    "NORMAL": {
+      "min_p": 0.0,
+      "max_p": 0.03,
+      "label": "Normal (No Alert)",
+      "action": "Routine weather and drainage monitoring."
+    },
+    "WATCH": {
+      "min_p": 0.03,
+      "max_p": 0.12,
+      "label": "Flood Watch",
+      "action": "Heightened situational awareness, standby crews, monitor telemetry."
+    },
+    "WARNING": {
+      "min_p": 0.12,
+      "max_p": 1.0,
+      "label": "Flood Warning",
+      "action": "Immediate tactical response, deploy mobile flood barriers, trigger traffic diversion."
+    }
+  },
+  "cv_stats": {
+    "seed_pr_aucs": [
+      0.1513986238188192,
+      0.15382908502301954,
+      0.16261988995033483,
+      0.16686668670523033,
+      0.12800025646100302
+    ],
+    "seed_roc_aucs": [
+      0.7295366795366794,
+      0.7152509652509652,
+      0.6975868725868727,
+      0.7436293436293436,
+      0.7178571428571429
+    ],
+    "mean_pr_auc": 0.15254290839168136,
+    "std_pr_auc": 0.013505714226284058,
+    "mean_roc_auc": 0.7207722007722007,
+    "std_roc_auc": 0.015334967329572622,
+    "agg_pr_auc": 0.14471991490470376,
+    "agg_roc_auc": 0.7249034749034748
+  },
+  "best_operating_point": {
+    "threshold": 0.08,
+    "recall": 0.7,
+    "precision": 0.17073170731707318,
+    "f1_score": 0.27450980392156865,
+    "f2_score": 0.43209876543209874,
+    "true_positives": 14,
+    "false_positives": 68
+  },
+  "features": [
+    "latitude",
+    "longitude",
+    "elev_mean",
+    "elev_min",
+    "elev_std",
+    "rain_sum_15m",
+    "rain_sum_30m",
+    "rain_sum_90m",
+    "rain_max_5m"
+  ]
+}

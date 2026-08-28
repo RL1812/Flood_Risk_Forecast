@@ -1,0 +1,322 @@
+[
+  {
+    "flood_event": {
+      "datetime": "2023-07-20T09:25:00+08:00",
+      "PLN_AREA_N": "BUKIT TIMAH",
+      "elev_mean": 27.48,
+      "elev_min": 2.41,
+      "elev_std": 11.24,
+      "latitude": 1.3299967651884823,
+      "longitude": 103.79069950364038,
+      "location_name": "Dunearn Road near Sime Darby Centre",
+      "description": "A flash flood hit a 200m stretch of Dunearn Road near Sime Darby Centre at around 9.25am, causing two traffic lanes to be temporarily closed. The flood subsided within 15 minutes.",
+      "severity": "Minor",
+      "source_url": "https://www.channelnewsasia.com/singapore/flash-flood-dunearn-road-82-percent-july-rain-four-hours-5615556",
+      "source_title": "Dunearn Road hit by flash flood as parts of S'pore get 82% of average July monthly rain in under 4 hours"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-05-04T06:55:00+08:00",
+      "PLN_AREA_N": "GEYLANG",
+      "elev_mean": 7.77,
+      "elev_min": -25.52,
+      "elev_std": 4.71,
+      "latitude": 1.3208955383568208,
+      "longitude": 103.8895225692458,
+      "location_name": "junction of Mountbatten Road and Tanjong Katong Road South",
+      "description": "Flash flood warning issued by PUB urging people to avoid the junction of Mountbatten Road and Tanjong Katong Road South.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/heavy-rain-changi-airport-flight-delay-flash-flood-singapore-4312831",
+      "source_title": "Heavy rain triggers flash flood warnings across Singapore; some flights at Changi Airport affected"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-05-04T09:00:00+08:00",
+      "PLN_AREA_N": "DOWNTOWN CORE",
+      "elev_mean": 8.6,
+      "elev_min": -7.01,
+      "elev_std": 7.26,
+      "latitude": 1.286789224537618,
+      "longitude": 103.8554969918362,
+      "location_name": "Craig Road in the Tanjong Pagar area",
+      "description": "Flash flood warning issued covering Craig Road in the Tanjong Pagar area.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/heavy-rain-changi-airport-flight-delay-flash-flood-singapore-4312831",
+      "source_title": "Heavy rain triggers flash flood warnings across Singapore; some flights at Changi Airport affected"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-05-04T09:00:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "location_name": "Jalan Seaview in the Marine Parade area",
+      "description": "Flash flood warning issued covering Jalan Seaview in the Marine Parade area.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/heavy-rain-changi-airport-flight-delay-flash-flood-singapore-4312831",
+      "source_title": "Heavy rain triggers flash flood warnings across Singapore; some flights at Changi Airport affected"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-05-04T09:00:00+08:00",
+      "PLN_AREA_N": "BOON LAY",
+      "elev_mean": 10.09,
+      "elev_min": -22.97,
+      "elev_std": 7.0,
+      "latitude": 1.3147871613568884,
+      "longitude": 103.70221716813961,
+      "location_name": "Jalan Boon Lay",
+      "description": "Flash flood warning issued covering a section of Jalan Boon Lay in the west.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/heavy-rain-changi-airport-flight-delay-flash-flood-singapore-4312831",
+      "source_title": "Heavy rain triggers flash flood warnings across Singapore; some flights at Changi Airport affected"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-10-04T15:30:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "location_name": "Still Road South, Block 66 and 67 Marine Drive",
+      "description": "Flooding occurred at Still Road South and surrounding HDB blocks at Block 66 and 67 Marine Drive due to a damaged water pipe, affecting a lift and a path to the temporary community centre office.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/marine-parade-flooding-water-damaged-water-pipe-burst-4658726",
+      "source_title": "Parts of Marine Parade, including Still Road South, flooded due to damaged water pipe"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-11-16T15:20:00+08:00",
+      "PLN_AREA_N": "BUKIT TIMAH",
+      "elev_mean": 27.48,
+      "elev_min": 2.41,
+      "elev_std": 11.24,
+      "latitude": 1.3299967651884823,
+      "longitude": 103.79069950364038,
+      "location_name": "Bukit Timah Road near King Albert Park MRT station",
+      "description": "Heavy downpour caused a flash flood along Bukit Timah Road near King Albert Park MRT station due to high water levels in adjacent drains and Bukit Timah Canal. The floodwaters subsided 10 minutes later.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/heavy-rain-flash-flood-risk-bukit-timah-pub-warning-4751796",
+      "source_title": "Bukit Timah Road hit by flash flood as northwest Singapore experiences one of highest daily rainfalls since 1978"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-11-17T14:00:00+08:00",
+      "PLN_AREA_N": "ROCHOR",
+      "elev_mean": 11.49,
+      "elev_min": -4.81,
+      "elev_std": 7.41,
+      "latitude": 1.3041387872416432,
+      "longitude": 103.85328440346635,
+      "location_name": "Ophir Road near Bugis",
+      "description": "Heavy rain triggered a flash flood at Ophir Road near Bugis.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/flash-flood-singapore-heavy-rain-ophir-road-4752706",
+      "source_title": "Heavy rain triggers flash flood near Bugis, warnings in several locations"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-11-22T15:30:00+08:00",
+      "PLN_AREA_N": "TOA PAYOH",
+      "elev_mean": 14.01,
+      "elev_min": -10.24,
+      "elev_std": 7.79,
+      "latitude": 1.3366835566138826,
+      "longitude": 103.86102587476296,
+      "location_name": "Wan Tho Avenue",
+      "description": "Flash flood occurred at Wan Tho Avenue in the Potong Pasir area in the afternoon, subsiding within 10 minutes.",
+      "severity": "Minor",
+      "source_url": "https://www.channelnewsasia.com/singapore/flash-floods-yishun-potong-pasir-highest-daily-rainfall-1978-4764811",
+      "source_title": "Flash floods hit Yishun, Potong Pasir as northern Singapore records one of highest daily rainfalls since 1978"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-11-22T15:30:00+08:00",
+      "PLN_AREA_N": "YISHUN",
+      "elev_mean": 13.43,
+      "elev_min": -17.85,
+      "elev_std": 10.35,
+      "latitude": 1.4150394317122374,
+      "longitude": 103.83711790511772,
+      "location_name": "Yishun Avenue 7",
+      "description": "Flash flood occurred at Yishun Avenue 7 in the afternoon, subsiding within 10 minutes with assistance provided to motorists.",
+      "severity": "Minor",
+      "source_url": "https://www.channelnewsasia.com/singapore/flash-floods-yishun-potong-pasir-highest-daily-rainfall-1978-4764811",
+      "source_title": "Flash floods hit Yishun, Potong Pasir as northern Singapore records one of highest daily rainfalls since 1978"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-12-29T15:30:00+08:00",
+      "PLN_AREA_N": "TOA PAYOH",
+      "elev_mean": 14.01,
+      "elev_min": -10.24,
+      "elev_std": 7.79,
+      "latitude": 1.3366835566138826,
+      "longitude": 103.86102587476296,
+      "location_name": "Toa Payoh",
+      "description": "Heavy downpours triggered flash floods in nearly 20 locations across Singapore, including Toa Payoh, which subsided within 20 minutes.",
+      "severity": "Minor",
+      "source_url": "https://www.channelnewsasia.com/watch/heavy-downpour-triggers-flash-floods-singapore-4830301",
+      "source_title": "Heavy downpour triggers flash floods in Singapore"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2024-12-29T17:00:00+08:00",
+      "PLN_AREA_N": "BUKIT TIMAH",
+      "elev_mean": 27.48,
+      "elev_min": 2.41,
+      "elev_std": 11.24,
+      "latitude": 1.3299967651884823,
+      "longitude": 103.79069950364038,
+      "location_name": "Dunearn Road and Bukit Timah Road near King Albert Park",
+      "description": "Flash floods occurred along Dunearn Road and Bukit Timah Road near King Albert Park from about 5pm due to high water levels in nearby drains and Bukit Timah Canal, subsiding in 20 minutes.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/flash-floods-bukit-timah-heavy-rain-weather-4830136",
+      "source_title": "Flash floods in Bukit Timah area due to heavy rain"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-01-10T18:00:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "location_name": "Jalan Seaview",
+      "description": "Flooding occurred along a stretch of Jalan Seaview due to heavy rain coinciding with a high tide of 2.8m, which temporarily overwhelmed the adjacent canal and surrounding roadside drains.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/monsoon-surge-flooding-jalan-seaview-heavy-rain-high-tide-pub-4852436",
+      "source_title": "Flooding at Jalan Seaview on Jan 10 due to 'heavy rain coinciding with high tide': PUB"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-03-14T09:00:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "location_name": "",
+      "description": "",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/marine-parade-flood-water-pipe-damage-firm-fined-4999926",
+      "source_title": "Marine Parade flood: Construction firm fined for damaging water pipe"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-03-20T14:00:00+08:00",
+      "PLN_AREA_N": "MARINE PARADE",
+      "elev_mean": 7.24,
+      "elev_min": -14.35,
+      "elev_std": 3.96,
+      "latitude": 1.3002276142507332,
+      "longitude": 103.89627235109683,
+      "location_name": "intersection of Mountbatten Road and Jalan Seaview",
+      "description": "Flooding occurred on a 15m stretch along the intersection of Mountbatten Road and Jalan Seaview for about two hours due to heavy rainfall and high tide, affecting the road and a nearby property.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/monsoon-surge-march-2025-high-rainfall-jurong-west-jalan-seaview-floods-5013696",
+      "source_title": "Jurong West sees 318mm of rain during monsoon surge, surpassing Singapore's March average"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-13T15:30:00+08:00",
+      "PLN_AREA_N": "YISHUN",
+      "elev_mean": 13.43,
+      "elev_min": -17.85,
+      "elev_std": 10.35,
+      "latitude": 1.4150394317122374,
+      "longitude": 103.83711790511772,
+      "location_name": "Yishun Avenue 7 (near the intersection of Yishun Street 22)",
+      "description": "Flash flood broke out along Yishun Avenue 7 after heavy rain on Sunday afternoon, subsiding within an hour.",
+      "severity": "Minor",
+      "source_url": "https://www.channelnewsasia.com/singapore/pub-flash-flood-apr-13-yishun-punggol-5062926",
+      "source_title": "Flash floods hit parts of Singapore after afternoon downpour: PUB"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-13T15:30:00+08:00",
+      "PLN_AREA_N": "PUNGGOL",
+      "elev_mean": 10.82,
+      "elev_min": 0.0,
+      "elev_std": 7.63,
+      "latitude": 1.405364529278244,
+      "longitude": 103.91004604844186,
+      "location_name": "Punggol Way (slip road to the Tampines Expressway)",
+      "description": "Flash flood broke out along Punggol Way slip road to TPE after heavy rain on Sunday afternoon, subsiding within an hour.",
+      "severity": "Minor",
+      "source_url": "https://www.channelnewsasia.com/singapore/pub-flash-flood-apr-13-yishun-punggol-5062926",
+      "source_title": "Flash floods hit parts of Singapore after afternoon downpour: PUB"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-13T15:30:00+08:00",
+      "PLN_AREA_N": "KALLANG",
+      "elev_mean": 6.74,
+      "elev_min": -9.07,
+      "elev_std": 4.4,
+      "latitude": 1.311124875369188,
+      "longitude": 103.86654409888384,
+      "location_name": "Kallang-Paya Lebar Expressway (slip road to Buangkok East Drive)",
+      "description": "Flash flood broke out along the KPE slip road to Buangkok East Drive after heavy rain on Sunday afternoon, subsiding within an hour.",
+      "severity": "Minor",
+      "source_url": "https://www.channelnewsasia.com/singapore/pub-flash-flood-apr-13-yishun-punggol-5062926",
+      "source_title": "Flash floods hit parts of Singapore after afternoon downpour: PUB"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-20T17:00:00+08:00",
+      "PLN_AREA_N": "BUKIT TIMAH",
+      "elev_mean": 27.48,
+      "elev_min": 2.41,
+      "elev_std": 11.24,
+      "latitude": 1.3299967651884823,
+      "longitude": 103.79069950364038,
+      "location_name": "Kings Road",
+      "description": "Flash flood occurred between 5pm and 6pm as heavy rain temporarily overwhelmed the capacity of surrounding drains and canals.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/flash-floods-bukit-timah-balmoral-road-heavy-rain-5076771",
+      "source_title": "Flash floods at four locations amid heavy rain"
+    }
+  },
+  {
+    "flood_event": {
+      "datetime": "2025-04-20T17:00:00+08:00",
+      "PLN_AREA_N": "NEWTON",
+      "elev_mean": 20.37,
+      "elev_min": 1.45,
+      "elev_std": 9.67,
+      "latitude": 1.3086600233095602,
+      "longitude": 103.83807779586849,
+      "location_name": "Junction of Stevens Road and Balmoral Road",
+      "description": "Flash flood occurred between 5pm and 6pm as heavy rain temporarily overwhelmed the capacity of surrounding drains and canals.",
+      "severity": "Moderate",
+      "source_url": "https://www.channelnewsasia.com/singapore/flash-floods-bukit-timah-balmoral-road-heavy-rain-5076771",
+      "source_title": "Flash floods at four locations amid heavy rain"
+    }
+  }
+]
