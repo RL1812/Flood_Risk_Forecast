@@ -12,7 +12,9 @@ This script:
 4. For each flood event, fetches rainfall readings for the time window 2 hours
    before the flooding alert until 15 minutes before the flooding alert, keeping only the
    records for sensors that fall within that event's planning area.
-5. Saves the filtered rainfall records into a new JSON file (flood_rainfall_records.json).
+5. Adds elevation statistics (elev_mean, elev_min, elev_std) of the planning area (PLN_AREA_N)
+   into the generated flood_rainfall_records.json.
+6. Saves the filtered rainfall records into a new JSON file (flood_rainfall_records.json).
 """
 
 import os
@@ -132,6 +134,23 @@ def find_planning_area_for_point(gdf: gpd.GeoDataFrame, lon: Optional[float], la
     if len(matches) > 0:
         return str(matches.iloc[0].get("PLN_AREA_N", ""))
     return None
+
+
+def extract_planning_area_elev_map(gdf: gpd.GeoDataFrame) -> Dict[str, Dict[str, Optional[float]]]:
+    """Extract mapping of PLN_AREA_N to elevation metrics (elev_mean, elev_min, elev_std)."""
+    elev_map = {}
+    for _, row in gdf.iterrows():
+        pln_name = row.get("PLN_AREA_N")
+        if pln_name:
+            elev_mean = float(row["elev_mean"]) if row.get("elev_mean") is not None else None
+            elev_min = float(row["elev_min"]) if row.get("elev_min") is not None else None
+            elev_std = float(row["elev_std"]) if row.get("elev_std") is not None else None
+            elev_map[str(pln_name).upper()] = {
+                "elev_mean": elev_mean,
+                "elev_min": elev_min,
+                "elev_std": elev_std
+            }
+    return elev_map
 
 
 def fetch_day_rainfall_readings(
@@ -262,6 +281,8 @@ def process_rainfall_pipeline(
     gdf = load_planning_areas(geojson_path)
     print(f"Loaded {len(gdf)} planning area shapes.")
 
+    pln_elev_map = extract_planning_area_elev_map(gdf)
+
     enriched_sensors = []
     sensor_id_to_pln = {}
     pln_to_sensor_ids: Dict[str, Set[str]] = {}
@@ -335,6 +356,9 @@ def process_rainfall_pipeline(
         pln_area = ev["PLN_AREA_N"]
         pln_key = pln_area.upper() if pln_area else ""
 
+        # Elevation stats for this planning area
+        elev_stats = pln_elev_map.get(pln_key, {"elev_mean": None, "elev_min": None, "elev_std": None})
+
         # Sensors located in this flood event's planning area
         target_sensors = [
             s for s in enriched_sensors
@@ -344,7 +368,7 @@ def process_rainfall_pipeline(
 
         print(f"\nProcessing Flood Event #{ev['index']}:")
         print(f"  Datetime: {ev['datetime_str']}")
-        print(f"  Planning Area: {pln_area}")
+        print(f"  Planning Area: {pln_area} (elev_mean={elev_stats['elev_mean']}m, elev_min={elev_stats['elev_min']}m, elev_std={elev_stats['elev_std']}m)")
         print(f"  Time Window: {t_start.isoformat()} to {t_end.isoformat()} ({start_hours_before}h before to {end_minutes_before}min before)")
         print(f"  Matching sensors in {pln_area}: {sorted(target_sensor_ids)}")
 
@@ -387,6 +411,9 @@ def process_rainfall_pipeline(
             "flood_event": {
                 "datetime": ev["datetime_str"],
                 "PLN_AREA_N": pln_area,
+                "elev_mean": elev_stats["elev_mean"],
+                "elev_min": elev_stats["elev_min"],
+                "elev_std": elev_stats["elev_std"],
                 "latitude": ev["latitude"],
                 "longitude": ev["longitude"],
                 "description": ev["raw_event"].get("description"),
