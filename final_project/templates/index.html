@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}Singapore Flood Risk & Elevation Explorer{% endblock %}
+{% block title %}Singapore Flood Risk & Real-Time Forecasting Explorer{% endblock %}
 
 {% block head %}
 <!-- Leaflet CSS -->
@@ -11,17 +11,28 @@
 {% endblock %}
 
 {% block main %}
-<!-- Page Header -->
+<!-- Dynamic Mode Banner -->
 <div class="row mb-3">
   <div class="col-12">
-    <div class="d-flex flex-wrap justify-content-between align-items-center pb-2 border-bottom">
-      <div>
-        <h2 class="h3 mb-1">Singapore Planning Areas & Flood Risk Explorer</h2>
-        <p class="text-muted mb-0">Interactive Digital Elevation Model (DEM) & Topographic Analysis by Region</p>
-      </div>
-      <div class="mt-2 mt-md-0">
-        <span class="badge bg-primary px-3 py-2">55 Planning Areas</span>
-        <span class="badge bg-secondary px-3 py-2 ms-1">COP30 DEM (30m)</span>
+    <div class="card shadow-sm border-0 bg-white">
+      <div class="card-body py-2 px-3 d-flex flex-wrap justify-content-between align-items-center">
+        <div>
+          <h1 class="h4 mb-0 fw-bold" id="viewHeaderTitle">Singapore Flood Vulnerability Map</h1>
+          <p class="text-muted small mb-0" id="viewHeaderSubtitle">
+            Interactive Digital Elevation Model (COP30 DEM) & Topographic Inundation Analysis
+          </p>
+        </div>
+        <div class="mt-2 mt-md-0 d-flex align-items-center gap-2">
+          <span class="badge bg-dark-subtle text-dark border px-2 py-1 small">
+            <i class="bi bi-geo-alt-fill text-primary"></i> 55 Planning Areas
+          </span>
+          <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1 small" id="modeBadge">
+            <i class="bi bi-layers-fill"></i> Vulnerability Mode
+          </span>
+          <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 small" id="dataGovBadge" style="display: none;">
+            <i class="bi bi-broadcast text-success"></i> Data.gov.sg Real-Time Live
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -32,98 +43,287 @@
   <div class="col-lg-8">
     <div class="card shadow-sm border-0">
       <div class="card-header bg-white d-flex justify-content-between align-items-center py-2">
-        <span class="fw-semibold text-secondary">🗺️ Interactive Map (Click any region to inspect)</span>
         <div class="d-flex align-items-center">
+          <span class="fw-semibold text-secondary me-2" id="mapTitle">🗺️ Singapore Planning Areas Map</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
           <select id="regionSelect" class="form-select form-select-sm" style="max-width: 220px;">
             <option value="">-- Jump to a Region --</option>
           </select>
+          <button id="btnResetView" class="btn btn-outline-secondary btn-sm" title="Reset map zoom and selection">
+            <i class="bi bi-arrows-fullscreen"></i> Reset
+          </button>
         </div>
       </div>
       <div class="card-body p-2">
         <div id="map"></div>
       </div>
+      <div class="card-footer bg-white py-2 small text-muted d-flex justify-content-between align-items-center">
+        <span id="mapInstruction">💡 Click any planning area polygon on the map to inspect elevation and topographic risk.</span>
+        <span class="text-end small text-secondary">Data sources: URA Master Plan, COP30 DEM, NEA Data.gov.sg</span>
+      </div>
     </div>
   </div>
 
-  <!-- Region Details Panel Column -->
+  <!-- Sidebar Column (Swappable Panels) -->
   <div class="col-lg-4">
-    <div class="card shadow-sm border-0 mb-3" id="detailsCard">
-      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-        <span class="fw-semibold">📊 Region Details</span>
-        <span id="selectedRegionBadge" class="badge bg-secondary">No Region Selected</span>
-      </div>
-      <div class="card-body">
-        <!-- Default Empty State -->
-        <div id="noSelectionPrompt" class="text-center py-5 text-muted">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-geo-alt mb-3 text-secondary" viewBox="0 0 16 16">
-            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
-            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-          </svg>
-          <p class="mb-1 fw-semibold">Click on any region on the map</p>
-          <small>View mean elevation, minimum elevation, variability, and flood risk indicator.</small>
+    
+    <!-- ========================================================================= -->
+    <!-- PANEL 1: FLOOD VULNERABILITY MAP (DEFAULT)                                 -->
+    <!-- ========================================================================= -->
+    <div id="vulnerabilityPanel">
+      <div class="card shadow-sm border-0 mb-3">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center py-2">
+          <span class="fw-semibold"><i class="bi bi-bar-chart-fill me-1"></i> Elevation & Terrain Profile</span>
+          <span id="selectedRegionBadge" class="badge bg-secondary">No Region Selected</span>
         </div>
+        <div class="card-body">
+          <!-- Empty State -->
+          <div id="noSelectionPrompt" class="text-center py-5 text-muted">
+            <div class="display-6 text-secondary mb-2"><i class="bi bi-geo-alt"></i></div>
+            <p class="mb-1 fw-semibold">Select a region on the map</p>
+            <small>Inspect mean elevation, minimum elevation, topography variance, and vulnerability classification.</small>
+          </div>
 
-        <!-- Selected Region State -->
-        <div id="selectionContent" style="display: none;">
-          <h4 id="panelAreaName" class="text-primary mb-1">--</h4>
-          <p id="panelRegionName" class="text-muted small mb-3">--</p>
+          <!-- Selection Content -->
+          <div id="selectionContent" style="display: none;">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <div>
+                <h4 id="panelAreaName" class="text-primary mb-0 fw-bold">--</h4>
+                <p id="panelRegionName" class="text-muted small mb-0">--</p>
+              </div>
+              <span id="vulnTypeBadge" class="badge bg-info-subtle text-dark border">Planning Area</span>
+            </div>
 
-          <div class="row g-2 mb-3">
-            <div class="col-6">
-              <div class="p-3 bg-light rounded stat-card">
-                <div class="text-muted small">Mean Elevation</div>
-                <div class="h4 mb-0 fw-bold" id="panelMeanElev">-- m</div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <div class="p-3 bg-light rounded stat-card border">
+                  <div class="text-muted small">Mean Elevation</div>
+                  <div class="h4 mb-0 fw-bold text-dark" id="panelMeanElev">-- m</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 bg-light rounded stat-card border">
+                  <div class="text-muted small">Min Elevation</div>
+                  <div class="h4 mb-0 fw-bold text-dark" id="panelMinElev">-- m</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 bg-light rounded stat-card border">
+                  <div class="text-muted small">Std Deviation</div>
+                  <div class="h5 mb-0 fw-bold text-dark" id="panelStdElev">-- m</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 bg-light rounded stat-card border">
+                  <div class="text-muted small">Topographic Range</div>
+                  <div class="h5 mb-0 fw-bold text-dark" id="panelRange">--</div>
+                </div>
               </div>
             </div>
-            <div class="col-6">
-              <div class="p-3 bg-light rounded stat-card">
-                <div class="text-muted small">Min Elevation</div>
-                <div class="h4 mb-0 fw-bold" id="panelMinElev">-- m</div>
+
+            <div class="mb-3">
+              <label class="form-label small text-muted mb-1 fw-semibold">Elevation Vulnerability Level</label>
+              <div id="panelRiskBadge" class="risk-badge text-center mb-2">--</div>
+              <div class="progress" style="height: 8px;">
+                <div id="panelProgressBar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
               </div>
-            </div>
-            <div class="col-6">
-              <div class="p-3 bg-light rounded stat-card">
-                <div class="text-muted small">Std Deviation</div>
-                <div class="h5 mb-0 fw-bold" id="panelStdElev">-- m</div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="p-3 bg-light rounded stat-card">
-                <div class="text-muted small">Topographic Range</div>
-                <div class="h5 mb-0 fw-bold" id="panelRange">--</div>
+              <div class="d-flex justify-content-between small text-muted mt-1">
+                <span>Low (< 5m)</span>
+                <span>Mid (5-20m)</span>
+                <span>High (> 20m)</span>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label small text-muted mb-1">Elevation Vulnerability Level</label>
-            <div id="panelRiskBadge" class="risk-badge text-center mb-2">--</div>
-            <div class="progress" style="height: 8px;">
-              <div id="panelProgressBar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
-            </div>
-            <div class="d-flex justify-content-between small text-muted mt-1">
-              <span>Low (< 5m)</span>
-              <span>Mid (5-20m)</span>
-              <span>High (> 20m)</span>
-            </div>
-          </div>
-
-          <button id="btnResetView" class="btn btn-outline-secondary btn-sm w-100 mt-2">
-            ↺ Reset Map View
-          </button>
+      <!-- Vulnerability Guide Card -->
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h6 class="fw-bold mb-2 text-dark"><i class="bi bi-info-circle-fill text-primary me-1"></i> Topography & Inundation Sensitivity</h6>
+          <p class="small text-muted mb-0">
+            Low-lying coastal plains and reclaimed terrain lack steep hydraulic slopes, creating prolonged stormwater ponding during heavy downpours. High-elevation corridors provide natural drainage gradients.
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- Quick Info Card -->
-    <div class="card shadow-sm border-0">
-      <div class="card-body">
-        <h6 class="fw-bold mb-2">💡 About Elevation & Flooding</h6>
-        <p class="small text-muted mb-0">
-          Lower mean and minimum elevation areas (coastal plains and reclaimed regions) have higher exposure to tidal surges and intense precipitation ponding. Higher relief areas offer natural drainage gradient.
-        </p>
+
+    <!-- ========================================================================= -->
+    <!-- PANEL 2: REAL-TIME 15-MINUTE FLOOD RISK FORECAST                           -->
+    <!-- ========================================================================= -->
+    <div id="forecastPanel" style="display: none;">
+      
+      <!-- Forecast Results Card -->
+      <div class="card shadow-sm border-0 mb-3">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center py-2">
+          <span class="fw-semibold"><i class="bi bi-stopwatch-fill me-1"></i> 15-Min Flood Forecast</span>
+          <span id="forecastRegionBadge" class="badge bg-secondary">No Region Selected</span>
+        </div>
+        <div class="card-body">
+          
+          <!-- Forecast Empty State -->
+          <div id="forecastEmptyPrompt" class="text-center py-5 text-muted">
+            <div class="display-6 text-primary mb-2"><i class="bi bi-hand-index-thumb"></i></div>
+            <h6 class="fw-bold text-dark mb-1">Select a Planning Area</h6>
+            <p class="small text-muted mb-0">
+              Click any planning area on the map. The system will pull the last <strong>1 hour 45 minutes</strong> of real-time rainfall data from <strong>Data.gov.sg API</strong> and run the <strong>XGBoost Machine Learning model</strong> to predict flash flood risk in 15 minutes.
+            </p>
+          </div>
+
+          <!-- Forecast Loading Spinner -->
+          <div id="forecastLoadingSpinner" class="text-center py-5" style="display: none;">
+            <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <h6 class="fw-bold text-dark mb-1">Ingesting Real-Time Telemetry...</h6>
+            <p class="small text-muted mb-0">
+              Pulling 5-minute rainfall readings from Data.gov.sg and executing XGBoost Ensemble inference...
+            </p>
+          </div>
+
+          <!-- Forecast Results Container -->
+          <div id="forecastResultsContent" style="display: none;">
+            
+            <!-- Region & Live Alert Tier Badge -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h4 id="fcAreaName" class="fw-bold text-dark mb-0">--</h4>
+                <div class="small text-muted" id="fcTimestamp">Updated: Just now</div>
+              </div>
+              <span id="fcTierBadge" class="badge fs-6 px-3 py-2">NORMAL</span>
+            </div>
+
+            <!-- Inundation Probability Meter -->
+            <div class="card bg-light border-0 p-3 mb-3">
+              <div class="d-flex justify-content-between align-items-baseline mb-1">
+                <span class="small fw-semibold text-secondary">Calibrated Flood Probability:</span>
+                <span class="h4 mb-0 fw-bold" id="fcProbText">0.0%</span>
+              </div>
+              <div class="progress" style="height: 10px;">
+                <div id="fcProbBar" class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;"></div>
+              </div>
+              <div class="d-flex justify-content-between small text-muted mt-1" style="font-size: 0.75rem;">
+                <span>0% (Normal)</span>
+                <span>3.0% (Watch Tier)</span>
+                <span>12.0%+ (Warning Tier)</span>
+              </div>
+            </div>
+
+            <!-- Action Recommendation Alert Box -->
+            <div id="fcActionBox" class="alert alert-success d-flex align-items-start mb-3 py-2 px-3 shadow-sm" role="alert">
+              <i id="fcActionIcon" class="bi bi-shield-check fs-4 me-2"></i>
+              <div>
+                <div class="fw-bold small" id="fcActionTitle">Operational Response Recommendation:</div>
+                <div class="small" id="fcActionText">Routine weather and drainage monitoring.</div>
+              </div>
+            </div>
+
+            <!-- Live Rainfall Ingestion Summary (1h 45m window) -->
+            <div class="border rounded p-3 bg-white mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="fw-bold small text-dark"><i class="bi bi-cloud-rain-fill text-primary me-1"></i> Live Rainfall Ingestion (1h 45m)</span>
+                <span class="badge bg-light text-dark border small" id="fcSensorIdBadge">Sensor: --</span>
+              </div>
+              
+              <div class="small text-muted mb-2" id="fcSensorDetails">
+                Station: Clementi Road (Lat: 1.334, Lon: 103.777)
+              </div>
+
+              <!-- Rainfall Feature Grid -->
+              <div class="row g-2 mb-2 text-center">
+                <div class="col-3">
+                  <div class="p-2 bg-light rounded border">
+                    <div class="text-muted" style="font-size: 0.7rem;">15m Sum</div>
+                    <div class="fw-bold" id="fcRain15m">0.0 mm</div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="p-2 bg-light rounded border">
+                    <div class="text-muted" style="font-size: 0.7rem;">30m Sum</div>
+                    <div class="fw-bold" id="fcRain30m">0.0 mm</div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="p-2 bg-light rounded border">
+                    <div class="text-muted" style="font-size: 0.7rem;">90m Sum</div>
+                    <div class="fw-bold" id="fcRain90m">0.0 mm</div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="p-2 bg-light rounded border">
+                    <div class="text-muted" style="font-size: 0.7rem;">5m Peak</div>
+                    <div class="fw-bold" id="fcRainMax5m">0.0 mm</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini Timeline Bar Chart -->
+              <div class="mt-3">
+                <div class="d-flex justify-content-between small text-muted mb-1" style="font-size: 0.75rem;">
+                  <span>-105 mins</span>
+                  <span>5-Minute Interval Intensity (mm)</span>
+                  <span>Now</span>
+                </div>
+                <div id="fcTimelineContainer" class="d-flex align-items-end gap-1 bg-light p-2 rounded border" style="height: 55px;">
+                  <!-- Timeline bars rendered by JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Topographic Profile -->
+            <div class="border rounded p-3 bg-white mb-3">
+              <div class="fw-bold small text-dark mb-2"><i class="bi bi-mountain text-secondary me-1"></i> Area Topography</div>
+              <div class="row g-2 text-center">
+                <div class="col-4">
+                  <div class="p-2 bg-light rounded border">
+                    <div class="text-muted small" style="font-size: 0.7rem;">Mean Elev</div>
+                    <div class="fw-bold small" id="fcMeanElev">-- m</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-2 bg-light rounded border">
+                    <div class="text-muted small" style="font-size: 0.7rem;">Min Elev</div>
+                    <div class="fw-bold small" id="fcMinElev">-- m</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-2 bg-light rounded border">
+                    <div class="text-muted small" style="font-size: 0.7rem;">Std Dev</div>
+                    <div class="fw-bold small" id="fcStdElev">-- m</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Model Transparency Accordion -->
+            <div class="accordion" id="accordionModelTech">
+              <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed py-2 px-3 small bg-light rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTech">
+                    <i class="bi bi-cpu-fill text-secondary me-2"></i> XGBoost ML Inference Breakdown
+                  </button>
+                </h2>
+                <div id="collapseTech" class="accordion-collapse collapse" data-bs-parent="#accordionModelTech">
+                  <div class="accordion-body p-2 small text-muted">
+                    <table class="table table-sm table-borderless mb-1" style="font-size: 0.75rem;">
+                      <tr><td><strong>Raw P(Flood):</strong></td><td class="text-end" id="fcRawProb">--</td></tr>
+                      <tr><td><strong>Calibrated P(Flood):</strong></td><td class="text-end" id="fcCalProb">--</td></tr>
+                      <tr><td><strong>Temporal Resistance Check:</strong></td><td class="text-end" id="fcTempResistance">--</td></tr>
+                      <tr><td><strong>Model Architecture:</strong></td><td class="text-end">Balanced Bagging XGBoost (8 sub-models)</td></tr>
+                      <tr><td><strong>Loss Function:</strong></td><td class="text-end">Focal Loss (&gamma;=2.0, &alpha;=0.25)</td></tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 {% endblock %}
@@ -132,6 +332,6 @@
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<!-- Map Logic JS -->
+<!-- Map and Application Logic JS -->
 <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 {% endblock %}
