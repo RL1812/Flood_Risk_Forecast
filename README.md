@@ -193,32 +193,3 @@ Open your browser and navigate to `http://127.0.0.1:5000`.
 }
 ```
 
----
-
-## 💼 Resume & Portfolio Demonstration
-
-### Project Links
-- **GitHub Repository**: [https://github.com/RL1812/cs50_files](https://github.com/RL1812/cs50_files)
-- **Subdirectory / Final Project**: [https://github.com/RL1812/cs50_files/tree/main/final_project](https://github.com/RL1812/cs50_files/tree/main/final_project)
-
-### Resume Bullet Points (Ready to Copy-Paste)
-
-#### 🔹 For Machine Learning / Data Science Roles:
-> **Singapore Flood Risk Intelligence & 15-Minute Forecasting System** | *Python, XGBoost, Scikit-Learn, GeoPandas, Flask*  
-> [GitHub](https://github.com/RL1812/cs50_files)
-> - Built an end-to-end flash flood early-warning forecasting engine across 55 Singapore planning areas with a 15-minute operational lead time.
-> - Engineered an ensemble of XGBoost classifiers using custom **Focal Loss** to resolve 1:100 class imbalance, achieving **94.7% recall** on imminent flood events.
-> - Applied **Isotonic Regression calibration** and a Temporal Resistance Filter (< 0.2mm peak rain threshold) to eliminate dry-weather false alarms.
-> - Processed Copernicus COP30 30m Digital Elevation Models (DEM) using GeoPandas/Shapely to compute multi-scale topographic vulnerability metrics.
-
-#### 🔹 For Full-Stack / Software Engineering Roles:
-> **Real-Time Hydrometeorological Intelligence Dashboard** | *Python, Flask, Leaflet.js, REST APIs, Gunicorn, Docker*  
-> [GitHub](https://github.com/RL1812/cs50_files)
-> - Architected a high-performance Flask web application integrating live 5-minute precipitation streams from Data.gov.sg’s 88 meteorological sensors.
-> - Designed a fault-tolerant telemetry ingestion pipeline with 60-second in-memory caching, automated cross-midnight pagination, and dynamic spatial fallback.
-> - Created an interactive Leaflet.js dual-mode GIS interface visualizing topographic elevation contours and real-time tiered emergency response playbooks.
-
----
-
-## 📜 License
-This project is licensed under the MIT License.
