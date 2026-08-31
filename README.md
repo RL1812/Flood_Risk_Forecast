@@ -5,7 +5,7 @@
 [![XGBoost](https://img.shields.io/badge/XGBoost-Ensemble-EB5424.svg?style=flat&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/)
 [![GeoPandas](https://img.shields.io/badge/GeoPandas-Geospatial-139C5A.svg?style=flat)](https://geopandas.org/)
 [![Leaflet.js](https://img.shields.io/badge/Leaflet.js-Interactive_Maps-199900.svg?style=flat&logo=leaflet&logoColor=white)](https://leafletjs.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 
 An end-to-end **Geospatial AI & Real-Time Hydrometeorological Telemetry System** that forecasts urban flash flood occurrences across all 55 Singapore Planning Areas with a **15-minute operational lead time**. 
 
@@ -16,10 +16,10 @@ Built with **Copernicus COP30 30m Digital Elevation Model (DEM)** data, live 5-m
 ## 📌 Key Capabilities
 
 - 🗺️ **Dual-Mode Interactive GIS Interface**:
-  - **Flood Vulnerability Mode**: Topographic sensitivity analysis calculating mean elevation, local minima, and elevation variance across all 55 planning zones.
+  - **Flood Vulnerability Mode**: Topographic sensitivity analysis calculating mean elevation, local minimum, and elevation variance across all 55 planning zones.
   - **Real-Time 15-Min Forecast Mode**: Ingests rolling 1h 45m (21 intervals × 5 min) rainfall time series to predict imminent flood probabilities.
 - 🤖 **Calibrated Machine Learning Engine**:
-  - Balanced XGBoost Ensemble trained on verified PUB flood records, CNA news archives, and high-resolution precipitation time-series.
+  - Balanced XGBoost Ensemble trained on verified PUB flood records, CNA news archives, and high-resolution precipitation time-series obtained through NEA Realtime Rainfall Reading API.
   - Custom **Focal Loss** objective function designed to address extreme class imbalance (~1:100 flood-to-dry ratio).
   - **Isotonic Regression Calibration** providing mathematically consistent posterior risk probabilities.
   - **Temporal Resistance Filter** (< 0.2mm peak threshold) eliminating spurious dry-weather false positives.
@@ -56,7 +56,7 @@ flowchart TD
     end
 
     subgraph User Experience & GIS
-        Flask["Flask REST API Engine"]
+        Flask["Flask Backend"]
         Leaflet["Leaflet.js Dual-Mode GIS Web App"]
     end
 
@@ -80,7 +80,7 @@ flowchart TD
 | **Objective Function** | Custom Focal Loss ($\gamma = 2.0, \alpha = 0.25$) |
 | **Calibration** | Isotonic Regression Probability Calibrator |
 | **Features** | `latitude`, `longitude`, `elev_mean`, `elev_min`, `elev_std`, `rain_sum_15m`, `rain_sum_30m`, `rain_sum_90m`, `rain_max_5m` |
-| **Operational Thresholds** | Watch: $\ge 0.030$ (Recall: 94.7%), Warning: $\ge 0.120$ (Precision: 88.2%) |
+| **Operational Thresholds** | Watch: $\ge 0.030$ (Recall: 90.0%), Warning: $\ge 0.120$ (Recall 70%) |
 | **Lead Time** | 15 Minutes before inundation |
 
 ---
@@ -108,7 +108,7 @@ flowchart TD
 │   ├── requirements.txt                   # Production Python dependencies
 │   ├── Procfile                           # PaaS production start command
 │   └── .env.example                       # Environment configuration template
-├── SS/                                    # Academic coursework modules
+├── SS/                                    # Superseded documents
 ├── requirements.txt                       # Root level Python dependencies
 ├── Procfile                               # Root level PaaS deployment configuration
 ├── .env.example                           # Root level environment template
@@ -149,19 +149,17 @@ Open your browser and navigate to `http://127.0.0.1:5000`.
 
 ---
 
-## 🌐 API Reference
+## 🌐 Reference
 
 ### 1. Planning Area Boundaries & Elevation
-- **Endpoint**: `GET /api/geojson`
-- **Response**: GeoJSON FeatureCollection containing 55 planning areas enriched with `elev_mean`, `elev_min`, `elev_std`, and polygon coordinates.
+- **Copernicus 30m DEM**: .tif file containing Elevation data derived from satellite measurement data.
+- **National Map Polygon**: GeoJSON file provided by Data.gov.sg containing 55 planning areas and polygon coordinates.
 
 ### 2. Weather Station Metadata
-- **Endpoint**: `GET /api/sensors`
-- **Response**: JSON array of all 88 active meteorological rainfall stations.
+- **Realtime/Historical Rainfall Readings**: API provided by Data.gov.sg containing rainfall readigns collected by all 88 active meteorological rainfall stations across Singapore.
 
 ### 3. Real-Time 15-Min Flood Forecast
-- **Endpoint**: `GET /api/forecast?pln_area=BUKIT%20TIMAH`
-- **Response**:
+
 ```json
 {
   "status": "success",
