@@ -54,7 +54,8 @@ def get_default_paths() -> Tuple[str, str, str, str]:
     """Determine default file paths based on script location and current working directory."""
     script_dir = os.path.dirname(os.path.abspath(__file__))
     cwd = os.getcwd()
-    search_dirs = [script_dir, cwd, os.path.join(cwd, "final_project"), os.path.join(script_dir, "final_project")]
+    search_dirs = [script_dir, cwd, os.path.join(
+        cwd, "final_project"), os.path.join(script_dir, "final_project")]
 
     seen = set()
     unique_search_dirs = []
@@ -68,8 +69,10 @@ def get_default_paths() -> Tuple[str, str, str, str]:
         data_path = os.path.join(script_dir, "training_dataset.csv")
 
     model_pkl_path = os.path.join(script_dir, "xgboost_flood_ensemble.pkl")
-    calibrator_pkl_path = os.path.join(script_dir, "xgboost_flood_calibrator.pkl")
-    config_json_path = os.path.join(script_dir, "xgboost_flood_model_config.json")
+    calibrator_pkl_path = os.path.join(
+        script_dir, "xgboost_flood_calibrator.pkl")
+    config_json_path = os.path.join(
+        script_dir, "xgboost_flood_model_config.json")
 
     return data_path, model_pkl_path, calibrator_pkl_path, config_json_path
 
@@ -80,6 +83,7 @@ class FocalLossObjective:
     FL(p_t) = - alpha_t * (1 - p_t)^gamma * log(p_t)
     Suppresses gradient contributions from easy negative instances.
     """
+
     def __init__(self, gamma: float = 2.0, alpha: float = 0.25):
         self.gamma = float(gamma)
         self.alpha = float(alpha)
@@ -89,13 +93,17 @@ class FocalLossObjective:
         p = np.clip(p, 1e-15, 1.0 - 1e-15)
 
         # Gradient
-        g1 = self.alpha * np.power(1.0 - p, self.gamma) * (self.gamma * p * np.log(p) + p - 1.0)
-        g0 = (1.0 - self.alpha) * np.power(p, self.gamma) * (1.0 - p - self.gamma * (1.0 - p) * np.log(1.0 - p))
+        g1 = self.alpha * np.power(1.0 - p, self.gamma) * \
+            (self.gamma * p * np.log(p) + p - 1.0)
+        g0 = (1.0 - self.alpha) * np.power(p, self.gamma) * \
+            (1.0 - p - self.gamma * (1.0 - p) * np.log(1.0 - p))
         grad = np.where(y_true == 1, g1, g0)
 
         # Positive-definite Hessian approximation
-        h1 = self.alpha * np.power(1.0 - p, self.gamma) * p * (1.0 - p) * (self.gamma + 1.0)
-        h0 = (1.0 - self.alpha) * np.power(p, self.gamma) * p * (1.0 - p) * (self.gamma + 1.0)
+        h1 = self.alpha * np.power(1.0 - p, self.gamma) * \
+            p * (1.0 - p) * (self.gamma + 1.0)
+        h0 = (1.0 - self.alpha) * np.power(p, self.gamma) * \
+            p * (1.0 - p) * (self.gamma + 1.0)
         hess = np.maximum(np.where(y_true == 1, h1, h0), 1e-5)
 
         return grad, hess
@@ -106,6 +114,7 @@ class BalancedXGBEnsemble:
     Ensemble of 5–10 XGBoost models where each member is trained on all positive flood
     events and a random, balanced subset of negative events, using Focal Loss.
     """
+
     def __init__(
         self,
         n_estimators_ensemble: int = 8,
@@ -138,14 +147,16 @@ class BalancedXGBEnsemble:
         n_pos = len(pos_idx)
 
         # Number of negative samples per sub-model
-        n_sample_neg = min(len(neg_idx), max(int(n_pos * self.neg_ratio), n_pos))
+        n_sample_neg = min(len(neg_idx), max(
+            int(n_pos * self.neg_ratio), n_pos))
 
         rng = np.random.RandomState(self.random_state)
         focal_obj = FocalLossObjective(gamma=self.gamma, alpha=self.alpha)
         self.models = []
 
         for i in range(self.n_estimators_ensemble):
-            sample_neg_idx = rng.choice(neg_idx, size=n_sample_neg, replace=False)
+            sample_neg_idx = rng.choice(
+                neg_idx, size=n_sample_neg, replace=False)
             sub_idx = np.concatenate([pos_idx, sample_neg_idx])
             rng.shuffle(sub_idx)
 
@@ -185,7 +196,8 @@ class BalancedXGBEnsemble:
     def feature_importances_(self) -> np.ndarray:
         if not self.models:
             return np.array([])
-        importances = [m.feature_importances_ for m in self.models if hasattr(m, "feature_importances_")]
+        importances = [m.feature_importances_ for m in self.models if hasattr(
+            m, "feature_importances_")]
         return np.mean(importances, axis=0) if importances else np.array([])
 
 
@@ -237,7 +249,8 @@ def run_multi_seed_cv(
     seed_roc_aucs = []
 
     for seed in seeds:
-        skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=seed)
+        skf = StratifiedKFold(
+            n_splits=n_splits, shuffle=True, random_state=seed)
         oof_p = np.zeros(len(X))
 
         for tr_idx, val_idx in skf.split(X_mat, y_arr):
@@ -259,7 +272,8 @@ def run_multi_seed_cv(
         roc = roc_auc_score(y_arr, oof_p)
         seed_pr_aucs.append(pr)
         seed_roc_aucs.append(roc)
-        print(f"  Seed {seed:4d}: OOF PR-AUC = {pr:.4f} | OOF ROC-AUC = {roc:.4f}")
+        print(
+            f"  Seed {seed:4d}: OOF PR-AUC = {pr:.4f} | OOF ROC-AUC = {roc:.4f}")
 
     mean_oof_probas = np.mean(seed_oof_probas, axis=0)
     agg_pr_auc = average_precision_score(y_arr, mean_oof_probas)
@@ -267,9 +281,12 @@ def run_multi_seed_cv(
 
     print("-" * 80)
     print(f"Multi-Seed Summary:")
-    print(f"  Mean PR-AUC across seeds: {np.mean(seed_pr_aucs):.4f} +/- {np.std(seed_pr_aucs):.4f}")
-    print(f"  Mean ROC-AUC across seeds: {np.mean(seed_roc_aucs):.4f} +/- {np.std(seed_roc_aucs):.4f}")
-    print(f"  Averaged OOF PR-AUC:       {agg_pr_auc:.4f} (Baseline: {len(np.where(y_arr==1)[0])/len(y_arr):.4f})")
+    print(
+        f"  Mean PR-AUC across seeds: {np.mean(seed_pr_aucs):.4f} +/- {np.std(seed_pr_aucs):.4f}")
+    print(
+        f"  Mean ROC-AUC across seeds: {np.mean(seed_roc_aucs):.4f} +/- {np.std(seed_roc_aucs):.4f}")
+    print(
+        f"  Averaged OOF PR-AUC:       {agg_pr_auc:.4f} (Baseline: {len(np.where(y_arr == 1)[0])/len(y_arr):.4f})")
     print(f"  Averaged OOF ROC-AUC:      {agg_roc_auc:.4f}")
     print("-" * 80)
 
@@ -299,7 +316,8 @@ def evaluate_threshold_sweep(
 
     if thresholds is None:
         thresholds = sorted(list(set(
-            [0.02, 0.03, 0.04, 0.05, 0.06, 0.08, 0.10, 0.15, 0.20, 0.25, 0.30, 0.50]
+            [0.02, 0.03, 0.04, 0.05, 0.06, 0.08,
+                0.10, 0.15, 0.20, 0.25, 0.30, 0.50]
         )))
 
     sweep_results = []
@@ -334,7 +352,8 @@ def evaluate_threshold_sweep(
     print("-" * 85)
 
     # Find optimal threshold by F2 score (recall emphasis)
-    best_f2_res = max(sweep_results, key=lambda r: (r["f2_score"], r["recall"]))
+    best_f2_res = max(sweep_results, key=lambda r: (
+        r["f2_score"], r["recall"]))
 
     return sweep_results, best_f2_res
 
@@ -388,7 +407,8 @@ def train_and_evaluate_advanced(
         oof_cal_probas = calibrator.predict(oof_raw_probas)
     else:  # Platt Scaling (Logistic Regression on logits)
         eps = 1e-12
-        logits = np.log(oof_raw_probas / (1.0 - oof_raw_probas + eps)).reshape(-1, 1)
+        logits = np.log(oof_raw_probas /
+                        (1.0 - oof_raw_probas + eps)).reshape(-1, 1)
         calibrator = LogisticRegression(C=1.0, solver="lbfgs")
         calibrator.fit(logits, y_arr)
         oof_cal_probas = calibrator.predict_proba(logits)[:, 1]
@@ -396,10 +416,12 @@ def train_and_evaluate_advanced(
     brier_before = brier_score_loss(y_arr, oof_raw_probas)
     brier_after = brier_score_loss(y_arr, oof_cal_probas)
     print(f"Brier Score Loss (Raw OOF):        {brier_before:.4f}")
-    print(f"Brier Score Loss (Calibrated OOF): {brier_after:.4f} (Lower is better)")
+    print(
+        f"Brier Score Loss (Calibrated OOF): {brier_after:.4f} (Lower is better)")
 
     # 4. Decision Threshold Tuning & Tiered Thresholds
-    sweep_results, best_operating_point = evaluate_threshold_sweep(y_arr, oof_cal_probas)
+    sweep_results, best_operating_point = evaluate_threshold_sweep(
+        y_arr, oof_cal_probas)
 
     watch_threshold = 0.030
     warning_threshold = 0.120
@@ -412,14 +434,20 @@ def train_and_evaluate_advanced(
     print("\n" + "=" * 80)
     print("TIERED OPERATIONAL THRESHOLDS EVALUATION")
     print("=" * 80)
-    print(f"1. FLOOD WATCH TIER   (p >= {watch_threshold:.3f}) - High Recall / Early Awareness:")
-    print(f"   Recall:    {recall_score(y_arr, watch_preds, zero_division=0)*100:.1f}% ({confusion_matrix(y_arr, watch_preds)[1,1]}/{sum(y_arr==1)} floods caught)")
-    print(f"   Precision: {precision_score(y_arr, watch_preds, zero_division=0)*100:.1f}% ({confusion_matrix(y_arr, watch_preds)[0,1]} false alarms)")
+    print(
+        f"1. FLOOD WATCH TIER   (p >= {watch_threshold:.3f}) - High Recall / Early Awareness:")
+    print(
+        f"   Recall:    {recall_score(y_arr, watch_preds, zero_division=0)*100:.1f}% ({confusion_matrix(y_arr, watch_preds)[1, 1]}/{sum(y_arr == 1)} floods caught)")
+    print(
+        f"   Precision: {precision_score(y_arr, watch_preds, zero_division=0)*100:.1f}% ({confusion_matrix(y_arr, watch_preds)[0, 1]} false alarms)")
     print(f"   Action:    Standby response teams, activate heightened sensor polling, monitor drainage telemetry.")
 
-    print(f"\n2. FLOOD WARNING TIER (p >= {warning_threshold:.3f}) - Higher Precision / Tactical Response:")
-    print(f"   Recall:    {recall_score(y_arr, warning_preds, zero_division=0)*100:.1f}% ({confusion_matrix(y_arr, warning_preds)[1,1]}/{sum(y_arr==1)} floods caught)")
-    print(f"   Precision: {precision_score(y_arr, warning_preds, zero_division=0)*100:.1f}% ({confusion_matrix(y_arr, warning_preds)[0,1]} false alarms)")
+    print(
+        f"\n2. FLOOD WARNING TIER (p >= {warning_threshold:.3f}) - Higher Precision / Tactical Response:")
+    print(
+        f"   Recall:    {recall_score(y_arr, warning_preds, zero_division=0)*100:.1f}% ({confusion_matrix(y_arr, warning_preds)[1, 1]}/{sum(y_arr == 1)} floods caught)")
+    print(
+        f"   Precision: {precision_score(y_arr, warning_preds, zero_division=0)*100:.1f}% ({confusion_matrix(y_arr, warning_preds)[0, 1]} false alarms)")
     print(f"   Action:    Deploy mobile flood barriers, trigger traffic diversion advisories, activate pumps.")
     print("=" * 80)
 
@@ -454,8 +482,10 @@ def train_and_evaluate_advanced(
     print(f"Saved Probability Calibrator to:    {output_calibrator_pkl}")
 
     # Also save a native XGBoost model for backward compatibility
-    legacy_json_path = os.path.join(os.path.dirname(output_model_pkl), "xgboost_flood_model.json")
-    legacy_pkl_path = os.path.join(os.path.dirname(output_model_pkl), "xgboost_flood_model.pkl")
+    legacy_json_path = os.path.join(os.path.dirname(
+        output_model_pkl), "xgboost_flood_model.json")
+    legacy_pkl_path = os.path.join(os.path.dirname(
+        output_model_pkl), "xgboost_flood_model.pkl")
     if len(full_ensemble.models) > 0:
         full_ensemble.models[0].save_model(legacy_json_path)
         joblib.dump(full_ensemble.models[0], legacy_pkl_path)

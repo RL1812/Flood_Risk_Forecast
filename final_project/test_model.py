@@ -27,7 +27,8 @@ if script_dir not in sys.path:
 try:
     from xgboost_training import BalancedXGBEnsemble, FocalLossObjective
     # Register in __main__ to allow seamless unpickling
-    setattr(sys.modules["__main__"], "BalancedXGBEnsemble", BalancedXGBEnsemble)
+    setattr(sys.modules["__main__"],
+            "BalancedXGBEnsemble", BalancedXGBEnsemble)
     setattr(sys.modules["__main__"], "FocalLossObjective", FocalLossObjective)
 except ImportError:
     pass
@@ -46,7 +47,8 @@ def find_file(candidate_names: List[str], base_dirs: List[str]) -> Optional[str]
 def get_default_paths() -> Tuple[str, str, Optional[str], str]:
     """Determine default file paths based on script location and current working directory."""
     cwd = os.getcwd()
-    search_dirs = [script_dir, cwd, os.path.join(cwd, "final_project"), os.path.join(script_dir, "final_project")]
+    search_dirs = [script_dir, cwd, os.path.join(
+        cwd, "final_project"), os.path.join(script_dir, "final_project")]
 
     seen = set()
     unique_search_dirs = []
@@ -67,10 +69,13 @@ def get_default_paths() -> Tuple[str, str, Optional[str], str]:
     if not model_path:
         model_path = os.path.join(script_dir, "xgboost_flood_ensemble.pkl")
 
-    calibrator_path = find_dataset_file(["xgboost_flood_calibrator.pkl"], unique_search_dirs)
-    config_path = find_dataset_file(["xgboost_flood_model_config.json"], unique_search_dirs)
+    calibrator_path = find_dataset_file(
+        ["xgboost_flood_calibrator.pkl"], unique_search_dirs)
+    config_path = find_dataset_file(
+        ["xgboost_flood_model_config.json"], unique_search_dirs)
     if not config_path:
-        config_path = os.path.join(script_dir, "xgboost_flood_model_config.json")
+        config_path = os.path.join(
+            script_dir, "xgboost_flood_model_config.json")
 
     return data_path, model_path, calibrator_path, config_path
 
@@ -145,7 +150,8 @@ def test_model_on_row(
 
     df = pd.read_csv(data_path)
     if row_index < 0 or row_index >= len(df):
-        raise IndexError(f"Row index {row_index} out of bounds (0 to {len(df)-1})")
+        raise IndexError(
+            f"Row index {row_index} out of bounds (0 to {len(df)-1})")
 
     row = df.iloc[row_index]
 
@@ -169,10 +175,12 @@ def test_model_on_row(
 
     if calibrator is not None:
         if hasattr(calibrator, "predict"):  # IsotonicRegression
-            cal_p_flood = float(np.clip(calibrator.predict(np.array([raw_p_flood])), 0.0, 1.0)[0])
+            cal_p_flood = float(np.clip(calibrator.predict(
+                np.array([raw_p_flood])), 0.0, 1.0)[0])
         elif hasattr(calibrator, "predict_proba"):  # Platt scaling LogisticRegression
             eps = 1e-12
-            logit = np.log(raw_p_flood / (1.0 - raw_p_flood + eps)).reshape(-1, 1)
+            logit = np.log(
+                raw_p_flood / (1.0 - raw_p_flood + eps)).reshape(-1, 1)
             cal_p_flood = float(calibrator.predict_proba(logit)[0, 1])
         else:
             cal_p_flood = raw_p_flood
@@ -180,8 +188,10 @@ def test_model_on_row(
         cal_p_flood = raw_p_flood
 
     # Tiered Decision Thresholds from configuration
-    watch_th = float(config.get("threshold_watch", config.get("tiered_thresholds", {}).get("watch", 0.030)))
-    warning_th = float(config.get("threshold_warning", config.get("tiered_thresholds", {}).get("warning", 0.120)))
+    watch_th = float(config.get("threshold_watch", config.get(
+        "tiered_thresholds", {}).get("watch", 0.030)))
+    warning_th = float(config.get("threshold_warning", config.get(
+        "tiered_thresholds", {}).get("warning", 0.120)))
 
     if threshold_override is not None:
         threshold = threshold_override
@@ -194,7 +204,8 @@ def test_model_on_row(
         threshold_src = f"default watch threshold ({watch_th:.4f})"
 
     # Check Temporal Resistance Check (if all past readings < 0.2mm, consider not flood)
-    rain_max = float(row.get("rain_max_5m", 0.0)) if pd.notnull(row.get("rain_max_5m")) else 0.0
+    rain_max = float(row.get("rain_max_5m", 0.0)) if pd.notnull(
+        row.get("rain_max_5m")) else 0.0
     temporal_resistance_triggered = (rain_max < 0.2)
 
     if temporal_resistance_triggered:
@@ -225,8 +236,10 @@ def test_model_on_row(
         print(f"  Station ID:        {row['station_id']}")
     if "pln_area" in row:
         print(f"  Planning Area:     {row['pln_area']}")
-    print(f"  Coordinates:       (Lat: {row.get('latitude', 'N/A')}, Lon: {row.get('longitude', 'N/A')})")
-    print(f"  Elevation Stats:   Mean={row.get('elev_mean', 'N/A')}m, Min={row.get('elev_min', 'N/A')}m, Std={row.get('elev_std', 'N/A')}m")
+    print(
+        f"  Coordinates:       (Lat: {row.get('latitude', 'N/A')}, Lon: {row.get('longitude', 'N/A')})")
+    print(
+        f"  Elevation Stats:   Mean={row.get('elev_mean', 'N/A')}m, Min={row.get('elev_min', 'N/A')}m, Std={row.get('elev_std', 'N/A')}m")
     print(f"  Rainfall Readings: 15m Sum={row.get('rain_sum_15m', 'N/A')}mm, 30m Sum={row.get('rain_sum_30m', 'N/A')}mm, 90m Sum={row.get('rain_sum_90m', 'N/A')}mm, 5m Max={row.get('rain_max_5m', 'N/A')}mm")
 
     print("\n" + "-" * 75)
@@ -234,13 +247,18 @@ def test_model_on_row(
     print("-" * 75)
     label_map = {0: "No Flood (0)", 1: "Flood Warning (1)"}
     print(f"  Architecture:            {type(model).__name__}")
-    print(f"  Raw P(Flood):            {raw_p_flood:.4f} ({raw_p_flood*100:.2f}%)")
-    print(f"  Calibrated P(Flood):     {cal_p_flood:.4f} ({cal_p_flood*100:.2f}%)")
-    print(f"  Tier Thresholds:         Watch >= {watch_th:.3f} | Warning >= {warning_th:.3f}")
+    print(
+        f"  Raw P(Flood):            {raw_p_flood:.4f} ({raw_p_flood*100:.2f}%)")
+    print(
+        f"  Calibrated P(Flood):     {cal_p_flood:.4f} ({cal_p_flood*100:.2f}%)")
+    print(
+        f"  Tier Thresholds:         Watch >= {watch_th:.3f} | Warning >= {warning_th:.3f}")
     print(f"  Operational Tier:        {alert_level}")
     print(f"  Recommended Action:      {alert_desc}")
-    print(f"  Ground Truth Target:     {label_map.get(actual_target, actual_target)}")
-    print(f"  Binary Prediction:       {label_map.get(binary_prediction, binary_prediction)} (at threshold {threshold:.4f})")
+    print(
+        f"  Ground Truth Target:     {label_map.get(actual_target, actual_target)}")
+    print(
+        f"  Binary Prediction:       {label_map.get(binary_prediction, binary_prediction)} (at threshold {threshold:.4f})")
 
     match = (binary_prediction == actual_target)
     result_status = "CORRECT [PASS]" if match else "INCORRECT [FAIL]"

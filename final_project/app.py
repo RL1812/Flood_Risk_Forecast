@@ -15,7 +15,7 @@ import time
 import datetime
 import urllib.request
 import requests
-from typing import Dict, Any, Optional, List, Tuple
+from typing import Dict, Any, Optional, List, Tuple, Set
 from flask import Flask, render_template, jsonify, request
 import numpy as np
 import pandas as pd
@@ -142,15 +142,23 @@ def init_resources():
 init_resources()
 
 
-def get_sensor_for_planning_area(pln_area_name: str) -> Dict[str, Any]:
+def get_sensor_for_planning_area(pln_area_name: str, active_station_ids: Optional[Set[str]] = None) -> Dict[str, Any]:
     """
     Find the best rainfall sensor for a given planning area.
-    If multiple sensors exist in the area, pick 1.
-    If none exist in the area, pick the closest sensor geographically.
+    Filters by active_station_ids if provided to guarantee that the sensor exists in live readings.
+    If multiple sensors exist in the area, pick the closest/first active one.
+    If none exist in the area, pick the closest active sensor geographically.
     """
     clean_name = pln_area_name.strip().upper()
+    candidate_sensors = RAINFALL_SENSORS if RAINFALL_SENSORS else []
+
+    if active_station_ids:
+        filtered = [s for s in candidate_sensors if s.get("id") in active_station_ids]
+        if filtered:
+            candidate_sensors = filtered
+
     direct_sensors = [
-        s for s in RAINFALL_SENSORS
+        s for s in candidate_sensors
         if (s.get("location", {}).get("PLN_AREA_N") or "").upper() == clean_name
     ]
 
@@ -174,7 +182,11 @@ def get_sensor_for_planning_area(pln_area_name: str) -> Dict[str, Any]:
         slon = s.get("location", {}).get("longitude", 103.8198)
         return (slat - target_lat)**2 + (slon - target_lon)**2
 
-    closest = min(RAINFALL_SENSORS, key=dist_sq)
+    closest = min(candidate_sensors, key=dist_sq) if candidate_sensors else {
+        "id": "S109",
+        "name": "Ang Mo Kio Avenue 5",
+        "location": {"latitude": 1.3764, "longitude": 103.8492}
+    }
     return {
         "id": closest["id"],
         "name": closest.get("name", closest["id"]),
@@ -190,14 +202,16 @@ def fetch_live_rainfall_data() -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     Fetch real-time rainfall data from Data.gov.sg API.
     Cached for 60 seconds to optimize latency and prevent 429 rate limits.
     Handles pagination, cross-midnight queries, timestamp deduplication, and chronological sorting.
+    Guarantees at least 21 readings (105 minutes) of 5-minute interval data.
     """
-    global RAINFALL_CACHE
+    global RAINFALL_CACHE, RAINFALL_SENSORS
     now_ts = time.time()
     if RAINFALL_CACHE["readings"] and (now_ts - RAINFALL_CACHE["timestamp"] < 60):
         return RAINFALL_CACHE["readings"], {
             "source": "Data.gov.sg Real-Time Rainfall API v2 (cached)",
             "cache_age_seconds": round(now_ts - RAINFALL_CACHE["timestamp"], 1),
-            "status": "LIVE_CACHED"
+            "status": "LIVE_CACHED",
+            "total_readings_available": len(RAINFALL_CACHE["readings"])
         }
 
     sg_tz = datetime.timezone(datetime.timedelta(hours=8))
@@ -216,37 +230,67 @@ def fetch_live_rainfall_data() -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     params = {"date": date_str}
 
     all_readings = []
+    latest_stations = []
     fetch_status = "LIVE_SUCCESS"
 
-    # Paginate through today's readings (up to 3 pages = 75 readings = 6+ hours)
-    for _ in range(3):
-        try:
-            resp = requests.get(url, headers=headers, params=params, timeout=10)
-            if resp.status_code == 200:
-                data = resp.json()
-                api_data = data.get("data", {})
-                page_readings = api_data.get("readings", [])
-                all_readings.extend(page_readings)
-                token = api_data.get("paginationToken")
-                if not token:
+    # Paginate through today's readings (up to 4 pages = 100 readings = 8+ hours)
+    for page in range(4):
+        resp_data = None
+        for attempt in range(3):
+            try:
+                resp = requests.get(url, headers=headers, params=params, timeout=10)
+                if resp.status_code == 200:
+                    resp_data = resp.json()
                     break
-                params = {"date": date_str, "paginationToken": token}
-            else:
-                break
-        except Exception as e:
-            print(f"Data.gov.sg API request error: {e}")
-            fetch_status = "ERROR_FALLBACK_CACHE"
+                elif resp.status_code == 429:
+                    time.sleep(0.5 * (attempt + 1))
+                else:
+                    break
+            except Exception as e:
+                time.sleep(0.3)
+
+        if not resp_data or resp_data.get("code") != 0:
+            if not all_readings:
+                fetch_status = "ERROR_FALLBACK_CACHE"
             break
 
-    # If crossing midnight and fewer than 21 readings for today, fetch yesterday's readings too
+        api_data = resp_data.get("data", {})
+        if not latest_stations and "stations" in api_data:
+            latest_stations = api_data.get("stations", [])
+
+        page_readings = api_data.get("readings", [])
+        all_readings.extend(page_readings)
+
+        if len(all_readings) >= 21:
+            break
+
+        token = api_data.get("paginationToken")
+        if not token:
+            break
+        params = {"date": date_str, "paginationToken": token}
+
+    # If crossing midnight or fewer than 21 readings for today, fetch yesterday's readings too
     if len(all_readings) < 21:
         yesterday_str = (now - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
-        try:
-            resp_y = requests.get(url, headers=headers, params={"date": yesterday_str}, timeout=10)
-            if resp_y.status_code == 200:
-                all_readings.extend(resp_y.json().get("data", {}).get("readings", []))
-        except Exception as ye:
-            print(f"Yesterday rainfall fetch notice: {ye}")
+        params_y = {"date": yesterday_str}
+        for _ in range(2):
+            try:
+                resp_y = requests.get(url, headers=headers, params=params_y, timeout=10)
+                if resp_y.status_code == 200:
+                    data_y = resp_y.json()
+                    api_data_y = data_y.get("data", {})
+                    if not latest_stations and "stations" in api_data_y:
+                        latest_stations = api_data_y.get("stations", [])
+                    all_readings.extend(api_data_y.get("readings", []))
+                    token_y = api_data_y.get("paginationToken")
+                    if not token_y or len(all_readings) >= 25:
+                        break
+                    params_y = {"date": yesterday_str, "paginationToken": token_y}
+                else:
+                    break
+            except Exception as ye:
+                print(f"Yesterday rainfall fetch notice: {ye}")
+                break
 
     if all_readings:
         # Deduplicate readings by timestamp and sort chronologically from oldest to newest
@@ -256,9 +300,15 @@ def fetch_live_rainfall_data() -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
             if ts and ts not in seen_ts:
                 seen_ts[ts] = r
 
+        def parse_ts(ts_str):
+            try:
+                return datetime.datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+            except Exception:
+                return datetime.datetime.min
+
         sorted_readings = sorted(
             seen_ts.values(),
-            key=lambda r: datetime.datetime.fromisoformat(r["timestamp"])
+            key=lambda r: parse_ts(r["timestamp"])
         )
 
         RAINFALL_CACHE = {
@@ -267,7 +317,24 @@ def fetch_live_rainfall_data() -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
             "readings": sorted_readings
         }
     else:
-        sorted_readings = RAINFALL_CACHE["readings"]
+        # Fallback to in-memory cache if available
+        if RAINFALL_CACHE["readings"]:
+            sorted_readings = RAINFALL_CACHE["readings"]
+        else:
+            # Generate synthetic fallback 21 intervals so app never returns empty
+            sorted_readings = []
+            for i in range(21, 0, -1):
+                t_step = now - datetime.timedelta(minutes=i * 5)
+                sorted_readings.append({
+                    "timestamp": t_step.isoformat(),
+                    "data": []
+                })
+            RAINFALL_CACHE = {
+                "timestamp": now_ts,
+                "date_str": date_str,
+                "readings": sorted_readings
+            }
+            fetch_status = "FALLBACK_SYNTHETIC"
 
     telemetry_meta = {
         "source": "Data.gov.sg Real-Time Rainfall API v2",
@@ -323,12 +390,19 @@ def get_forecast():
             "error": f"Invalid or missing planning area: '{pln_area}'. Available areas: {list(PLN_AREA_LOOKUP.keys())[:5]}..."
         }), 400
 
-    area_info = PLN_AREA_LOOKUP[pln_area]
-    sensor_info = get_sensor_for_planning_area(pln_area)
-    sensor_id = sensor_info["id"]
-
     # 1. Fetch Real-time rainfall readings for the last 1hr 45 mins (105 mins)
     all_readings, telemetry_meta = fetch_live_rainfall_data()
+
+    # Determine set of station IDs actively reporting in the latest readings
+    active_station_ids = set()
+    for r in all_readings[-10:]:
+        for d in r.get("data", []):
+            if d.get("stationId") and d.get("value") is not None:
+                active_station_ids.add(d["stationId"])
+
+    area_info = PLN_AREA_LOOKUP[pln_area]
+    sensor_info = get_sensor_for_planning_area(pln_area, active_station_ids=active_station_ids if active_station_ids else None)
+    sensor_id = sensor_info["id"]
 
     # all_readings is sorted chronologically (oldest -> newest).
     # Take the latest 21 readings (105 mins = 21 * 5min intervals up to the latest timestamp)
@@ -340,22 +414,30 @@ def get_forecast():
     for r in chronological_readings:
         ts = r.get("timestamp", "")
         # Find sensor value in this reading
-        val = 0.0
+        val = None
         for d in r.get("data", []):
             if d.get("stationId") == sensor_id:
                 v = d.get("value")
-                val = float(v) if v is not None else 0.0
+                if v is not None:
+                    val = float(v)
                 break
+
+        # If sensor is missing in this specific timestamp, fallback to last known reading or 0.0
+        if val is None:
+            val = rain_values[-1] if rain_values else 0.0
+
         rain_values.append(val)
         series_data.append({
             "timestamp": ts,
             "value": round(val, 2)
         })
 
-    # If no values retrieved from live stream, default to minimal zero series (105m = 21 steps)
-    if not rain_values:
-        rain_values = [0.0] * 21
-        series_data = [{"timestamp": f"T-{105-i*5}m", "value": 0.0} for i in range(21)]
+    # If fewer than 21 readings, pad at start with 0.0 to ensure exactly 21 readings (105 mins)
+    if len(rain_values) < 21:
+        missing_count = 21 - len(rain_values)
+        pad_series = [{"timestamp": f"T-{105-i*5}m", "value": 0.0} for i in range(missing_count)]
+        series_data = pad_series + series_data
+        rain_values = [0.0] * missing_count + rain_values
 
     # 2. Compute Rainfall Features
     rain_sum_15m = float(sum(rain_values[-3:]))

@@ -1,4 +1,46 @@
+# Environment variables and secrets
 .env
+.env.local
+.env.*.local
+
+# Python bytecode & cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# OS and Editor artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+
+# Temporary files and backups
+*.bak
+*_temp.*
+*.tmp
+*.log
+
+# Testing & caches
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints
 .system_generated/
+
