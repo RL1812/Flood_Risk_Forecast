@@ -72,16 +72,28 @@ flowchart TD
 
 ---
 
-## 📊 Machine Learning Model Specifications
+## 📊 Machine Learning Model Specifications & Performance
 
-| Attribute | Specification |
+| Attribute | Specification / Metric |
 | :--- | :--- |
-| **Model Type** | Balanced XGBoost Classifier Ensemble |
+| **Model Type** | Balanced XGBoost Classifier Ensemble (8 sub-models) |
 | **Objective Function** | Custom Focal Loss ($\gamma = 2.0, \alpha = 0.25$) |
-| **Calibration** | Isotonic Regression Probability Calibrator |
-| **Features** | `latitude`, `longitude`, `elev_mean`, `elev_min`, `elev_std`, `rain_sum_15m`, `rain_sum_30m`, `rain_sum_90m`, `rain_max_5m` |
-| **Operational Thresholds** | Watch: $\ge 0.030$ (Recall: 90.0%), Warning: $\ge 0.120$ (Recall 70%) |
+| **Calibration Method** | Isotonic Regression Probability Calibrator |
+| **Validation Scheme** | Stratified 5-Fold Cross-Validation across 5 random seeds |
+| **ROC-AUC (Discrimination)** | **0.721 $\pm$ 0.015** (Aggregate: 0.725) |
+| **PR-AUC (Precision-Recall)** | **0.153 $\pm$ 0.014** ($>2\times$ lift over 0.072 random baseline) |
+| **Training Dataset** | 279 samples (20 verified flood events, 259 non-flood cases) |
+| **Features (9)** | `latitude`, `longitude`, `elev_mean`, `elev_min`, `elev_std`, `rain_sum_15m`, `rain_sum_30m`, `rain_sum_90m`, `rain_max_5m` |
 | **Lead Time** | 15 Minutes before inundation |
+
+### Operational Alert Tiers & Decision Thresholds
+
+| Alert Tier | Calibrated Threshold ($P$) | Recall (Catch Rate) | Precision (Alarm Accuracy) | False Alarm Reduction | Operational Action |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **NORMAL** | $< 0.030$ *(or peak rain $< 0.2$mm)* | — | — | Baseline | Routine municipal monitoring. |
+| **WATCH** | $\ge 0.030$ | **95.0%** (19/20) | **11.4%** | Safety net | High situational awareness; standby maintenance crews. |
+| **OPTIMAL** | $\ge 0.080$ | **70.0%** (14/20) | **17.1%** | $F_2 = 0.432$ | Best operating balance prioritizing recall over precision. |
+| **WARNING** | $\ge 0.120$ | **65.0%** (13/20) | **16.9%** | **56% fewer false alarms** | Immediate tactical response: deploy flood barriers & traffic diversions. |
 
 ---
 
@@ -135,10 +147,12 @@ cd cs50_files/final_project
 pip install -r requirements.txt
 ```
 
-### 4. Configure Environment (Optional)
+### 4. Configure Environment (Optional / Recommended)
 ```bash
 cp .env.example .env
-# Edit .env to add DATA_GOV_SG_API_KEY if desired (default works without key)
+# Edit .env to add:
+# - CARTO_API_KEY: for CartoDB Positron basemap tiles (get free key at carto.com/basemaps/apikey)
+# - DATA_GOV_SG_API_KEY: optional for higher rate limits (works without key on public tier)
 ```
 
 ### 5. Launch the Application
