@@ -6,7 +6,10 @@
     "dockerfile": "Dockerfile",
     "context": "."
   },
-  "postCreateCommand": "curl -fsSL https://antigravity.google/cli/install.sh | bash",
+  "postCreateCommand": {
+    "antigravity": "curl -fsSL https://antigravity.google/cli/install.sh | bash",
+    "claude-code": "curl -fsSL https://claude.ai/install.sh | bash"
+  },
   "customizations": {
     "vscode": {
       "extensions": [

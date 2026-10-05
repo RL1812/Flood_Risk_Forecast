@@ -52,18 +52,23 @@ RAINFALL_CACHE = {
 }
 
 
-def load_api_key() -> str:
-    """Read DATA_GOV_SG_API_KEY from .env file or environment."""
-    env_key = os.getenv("DATA_GOV_SG_API_KEY", "")
-    if env_key:
-        return env_key
+def load_env_var(name: str) -> str:
+    """Read a variable from the environment, falling back to the local .env file."""
+    env_value = os.getenv(name, "")
+    if env_value:
+        return env_value.strip()
     env_path = os.path.join(script_dir, ".env")
     if os.path.exists(env_path):
         with open(env_path, "r", encoding="utf-8") as f:
             for line in f:
-                if line.startswith("DATA_GOV_SG_API_KEY="):
+                if line.startswith(f"{name}="):
                     return line.strip().split("=", 1)[1].strip("\"' ")
     return ""
+
+
+def load_api_key() -> str:
+    """Read DATA_GOV_SG_API_KEY from .env file or environment."""
+    return load_env_var("DATA_GOV_SG_API_KEY")
 
 
 def init_resources():
@@ -349,7 +354,7 @@ def fetch_live_rainfall_data() -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", carto_api_key=load_env_var("CARTO_API_KEY"))
 
 
 @app.route("/api/geojson")

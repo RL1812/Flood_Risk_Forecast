@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const map = L.map('map').setView(initialCenter, initialZoom);
 
   // 2. Base Tile Layer (CartoDB Positron)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  //    CARTO requires an API key on all basemap requests (since Aug 2026).
+  const cartoKey = window.CARTO_API_KEY || '';
+  const cartoKeyParam = cartoKey ? `?key=${encodeURIComponent(cartoKey)}` : '';
+  L.tileLayer(`https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png${cartoKeyParam}`, {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
     maxZoom: 19,
