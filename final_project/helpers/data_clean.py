@@ -25,9 +25,9 @@ def find_file(candidate_names: List[str], base_dirs: List[str]) -> Optional[str]
 
 def get_default_paths() -> Tuple[Optional[str], Optional[str]]:
     """Determine default file paths based on script location and current working directory."""
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     cwd = os.getcwd()
-    search_dirs = [script_dir, cwd, os.path.join(cwd, "final_project"), os.path.join(script_dir, "final_project")]
+    search_dirs = [project_dir, cwd, os.path.join(cwd, "final_project"), os.path.join(project_dir, "final_project")]
 
     seen = set()
     unique_search_dirs = []
@@ -40,9 +40,9 @@ def get_default_paths() -> Tuple[Optional[str], Optional[str]]:
     noflood_path = find_file(["noflood_rainfall_records.json"], unique_search_dirs)
 
     if not flood_path:
-        flood_path = os.path.join(script_dir, "flood_rainfall_records.json")
+        flood_path = os.path.join(project_dir, "flood_rainfall_records.json")
     if not noflood_path:
-        noflood_path = os.path.join(script_dir, "noflood_rainfall_records.json")
+        noflood_path = os.path.join(project_dir, "noflood_rainfall_records.json")
 
     return flood_path, noflood_path
 

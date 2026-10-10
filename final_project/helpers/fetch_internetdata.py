@@ -42,7 +42,7 @@ def load_env_api_key(env_path: Optional[str] = None) -> Optional[str]:
     search_paths = [
         env_path,
         os.path.join(os.getcwd(), ".env"),
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"),
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"),
         os.path.join(os.getcwd(), "final_project", ".env"),
     ]
     for path in search_paths:
@@ -64,8 +64,8 @@ def get_planning_areas_metadata(geojson_path: Optional[str] = None) -> Tuple[Lis
     Load official Singapore planning area names, coordinates, and elevation stats from geojson.
     """
     if not geojson_path:
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        geojson_path = os.path.join(script_dir, "enriched_planning_areas.geojson")
+        project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        geojson_path = os.path.join(project_dir, "enriched_planning_areas.geojson")
 
     if not os.path.exists(geojson_path):
         default_plns = [
@@ -434,9 +434,9 @@ def process_cna_flood_news(
 
 
 def main():
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    default_out = os.path.join(script_dir, "cna_flood_events_2023_2025.json")
-    default_geojson = os.path.join(script_dir, "enriched_planning_areas.geojson")
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    default_out = os.path.join(project_dir, "cna_flood_events_2023_2025.json")
+    default_geojson = os.path.join(project_dir, "enriched_planning_areas.geojson")
 
     parser = argparse.ArgumentParser(
         description="Search Google News RSS for CNA flood articles and extract events using Gemini."

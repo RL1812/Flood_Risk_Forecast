@@ -1,9 +1,13 @@
+import os
 import rasterio
 from rasterio.plot import show
 import matplotlib.pyplot as plt
 import numpy as np
 
-with rasterio.open('output_hh.tif') as src:
+# Data files live in final_project/, one level above helpers/
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+with rasterio.open(os.path.join(PROJECT_DIR, "output_hh.tif")) as src:
     # 1. Inspect Profile & Metadata
     print("=== Core Profile ===")
     for key, value in src.profile.items():
@@ -47,5 +51,5 @@ with rasterio.open('output_hh.tif') as src:
     ax.set_xlabel("Longitude")
     ax.set_ylabel("Latitude")
     plt.tight_layout()
-    plt.savefig("dem_visualization.png", dpi=300, bbox_inches="tight")
+    plt.savefig(os.path.join(PROJECT_DIR, "dem_visualization.png"), dpi=300, bbox_inches="tight")
     print("\nPlot saved successfully as 'dem_visualization.png'!")

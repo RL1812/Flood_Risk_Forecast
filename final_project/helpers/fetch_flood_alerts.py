@@ -142,7 +142,7 @@ def fetch_flood_alerts(
     Fetches flood alert records within the specified date range using the Data.gov.sg API.
     Manages rate limits, caching, and saves output to a JSON file.
     """
-    base_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     env_path = os.path.join(base_dir, env_file)
     cache_path = os.path.join(base_dir, cache_file)
     output_json_path = os.path.join(base_dir, output_json)

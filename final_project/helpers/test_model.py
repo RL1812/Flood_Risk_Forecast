@@ -23,6 +23,7 @@ from scipy.special import expit
 script_dir = os.path.dirname(os.path.abspath(__file__))
 if script_dir not in sys.path:
     sys.path.insert(0, script_dir)
+project_dir = os.path.dirname(script_dir)  # final_project/ (data & model files)
 
 try:
     from xgboost_training import BalancedXGBEnsemble, FocalLossObjective
@@ -47,8 +48,8 @@ def find_file(candidate_names: List[str], base_dirs: List[str]) -> Optional[str]
 def get_default_paths() -> Tuple[str, str, Optional[str], str]:
     """Determine default file paths based on script location and current working directory."""
     cwd = os.getcwd()
-    search_dirs = [script_dir, cwd, os.path.join(
-        cwd, "final_project"), os.path.join(script_dir, "final_project")]
+    search_dirs = [project_dir, cwd, os.path.join(
+        cwd, "final_project"), os.path.join(project_dir, "final_project")]
 
     seen = set()
     unique_search_dirs = []
@@ -59,7 +60,7 @@ def get_default_paths() -> Tuple[str, str, Optional[str], str]:
 
     data_path = find_dataset_file(["training_dataset.csv"], unique_search_dirs)
     if not data_path:
-        data_path = os.path.join(script_dir, "training_dataset.csv")
+        data_path = os.path.join(project_dir, "training_dataset.csv")
 
     model_path = find_dataset_file([
         "xgboost_flood_ensemble.pkl",
@@ -67,7 +68,7 @@ def get_default_paths() -> Tuple[str, str, Optional[str], str]:
         "xgboost_flood_model.json"
     ], unique_search_dirs)
     if not model_path:
-        model_path = os.path.join(script_dir, "xgboost_flood_ensemble.pkl")
+        model_path = os.path.join(project_dir, "xgboost_flood_ensemble.pkl")
 
     calibrator_path = find_dataset_file(
         ["xgboost_flood_calibrator.pkl"], unique_search_dirs)
@@ -75,7 +76,7 @@ def get_default_paths() -> Tuple[str, str, Optional[str], str]:
         ["xgboost_flood_model_config.json"], unique_search_dirs)
     if not config_path:
         config_path = os.path.join(
-            script_dir, "xgboost_flood_model_config.json")
+            project_dir, "xgboost_flood_model_config.json")
 
     return data_path, model_path, calibrator_path, config_path
 

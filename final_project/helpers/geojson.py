@@ -1,8 +1,12 @@
+import os
 import geopandas as gpd
 import folium
 
+# Data files live in final_project/, one level above helpers/
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # 1. Read the GeoJSON file downloaded from SLA
-gdf = gpd.read_file("MasterPlan2019PlanningAreaBoundaryNoSea.geojson")
+gdf = gpd.read_file(os.path.join(PROJECT_DIR, "MasterPlan2019PlanningAreaBoundaryNoSea.geojson"))
 
 # 2. Check the initial coordinate reference system (CRS)
 print("Original CRS:", gdf.crs)

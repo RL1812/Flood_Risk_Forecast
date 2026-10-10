@@ -30,9 +30,9 @@ def find_file(candidate_names: List[str], base_dirs: List[str]) -> Optional[str]
 
 def get_default_paths():
     """Determine default file paths based on script location and current working directory."""
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     cwd = os.getcwd()
-    search_dirs = [cwd, script_dir, os.path.join(cwd, "final_project"), os.path.join(script_dir, "final_project")]
+    search_dirs = [cwd, project_dir, os.path.join(cwd, "final_project"), os.path.join(project_dir, "final_project")]
     
     # Deduplicate search dirs while preserving order
     seen = set()
@@ -54,7 +54,7 @@ def get_default_paths():
 
     input_path = find_file(input_candidates, unique_search_dirs)
     geojson_path = find_file(geojson_candidates, unique_search_dirs)
-    output_path = os.path.join(script_dir, "flood_events_extracted.json")
+    output_path = os.path.join(project_dir, "flood_events_extracted.json")
 
     return input_path, geojson_path, output_path
 

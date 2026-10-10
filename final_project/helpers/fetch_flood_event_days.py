@@ -154,7 +154,7 @@ def fetch_flood_event_days(
     Searches for dates with flood events within the specified date range.
     Saves all records on those flood event dates to output_json.
     """
-    base_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     env_path = os.path.join(base_dir, env_file)
     cache_path = os.path.join(base_dir, cache_file)
     output_json_path = os.path.join(base_dir, output_json)

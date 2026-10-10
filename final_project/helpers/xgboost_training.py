@@ -52,10 +52,10 @@ def find_dataset(candidate_names: List[str], base_dirs: List[str]) -> Optional[s
 
 def get_default_paths() -> Tuple[str, str, str, str]:
     """Determine default file paths based on script location and current working directory."""
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     cwd = os.getcwd()
-    search_dirs = [script_dir, cwd, os.path.join(
-        cwd, "final_project"), os.path.join(script_dir, "final_project")]
+    search_dirs = [project_dir, cwd, os.path.join(
+        cwd, "final_project"), os.path.join(project_dir, "final_project")]
 
     seen = set()
     unique_search_dirs = []
@@ -66,13 +66,13 @@ def get_default_paths() -> Tuple[str, str, str, str]:
 
     data_path = find_dataset(["training_dataset.csv"], unique_search_dirs)
     if not data_path:
-        data_path = os.path.join(script_dir, "training_dataset.csv")
+        data_path = os.path.join(project_dir, "training_dataset.csv")
 
-    model_pkl_path = os.path.join(script_dir, "xgboost_flood_ensemble.pkl")
+    model_pkl_path = os.path.join(project_dir, "xgboost_flood_ensemble.pkl")
     calibrator_pkl_path = os.path.join(
-        script_dir, "xgboost_flood_calibrator.pkl")
+        project_dir, "xgboost_flood_calibrator.pkl")
     config_json_path = os.path.join(
-        script_dir, "xgboost_flood_model_config.json")
+        project_dir, "xgboost_flood_model_config.json")
 
     return data_path, model_pkl_path, calibrator_pkl_path, config_json_path
 

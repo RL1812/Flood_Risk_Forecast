@@ -21,10 +21,11 @@ import numpy as np
 import pandas as pd
 import joblib
 
-# Add current directory to path so that custom classes can unpickle cleanly
+# Add helpers/ to path so that custom classes can unpickle cleanly
 script_dir = os.path.dirname(os.path.abspath(__file__))
-if script_dir not in sys.path:
-    sys.path.insert(0, script_dir)
+helpers_dir = os.path.join(script_dir, "helpers")
+if helpers_dir not in sys.path:
+    sys.path.insert(0, helpers_dir)
 
 try:
     from xgboost_training import BalancedXGBEnsemble, FocalLossObjective
@@ -570,4 +571,4 @@ def get_forecast():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=int(load_env_var("PORT") or 5000), debug=True)

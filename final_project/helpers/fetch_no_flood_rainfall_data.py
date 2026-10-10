@@ -30,7 +30,7 @@ def load_env_file(env_path: Optional[str] = None):
     search_paths = [
         env_path,
         os.path.join(os.getcwd(), ".env"),
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"),
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"),
         os.path.join(os.getcwd(), "final_project", ".env"),
     ]
     for path in search_paths:
@@ -59,9 +59,9 @@ def find_file(candidate_names: List[str], base_dirs: List[str]) -> Optional[str]
 
 def get_default_paths():
     """Determine default file paths based on script location and current working directory."""
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     cwd = os.getcwd()
-    search_dirs = [cwd, script_dir, os.path.join(cwd, "final_project"), os.path.join(script_dir, "final_project")]
+    search_dirs = [cwd, project_dir, os.path.join(cwd, "final_project"), os.path.join(project_dir, "final_project")]
 
     seen = set()
     unique_search_dirs = []
@@ -81,7 +81,7 @@ def get_default_paths():
     flood_rf_path = find_file(flood_rainfall_candidates, unique_search_dirs)
     sensors_path = find_file(sensors_candidates, unique_search_dirs)
     geojson_path = find_file(geojson_candidates, unique_search_dirs)
-    noflood_out = os.path.join(script_dir, "noflood_rainfall_records.json")
+    noflood_out = os.path.join(project_dir, "noflood_rainfall_records.json")
 
     return flood_rf_path, sensors_path, geojson_path, noflood_out
 
