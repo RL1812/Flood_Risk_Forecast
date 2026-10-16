@@ -20,7 +20,7 @@ Built with **Copernicus COP30 30m Digital Elevation Model (DEM)** data, live 5-m
   - **Real-Time 15-Min Forecast Mode**: Ingests rolling 1h 45m (21 intervals × 5 min) rainfall time series to predict imminent flood probabilities.
 - 🤖 **Calibrated Machine Learning Engine**:
   - Balanced XGBoost Ensemble trained on verified PUB flood records, CNA news archives, and high-resolution precipitation time-series obtained through NEA Realtime Rainfall Reading API.
-  - Custom **Focal Loss** objective function designed to address extreme class imbalance (~1:100 flood-to-dry ratio).
+  - Custom **Focal Loss** objective function designed to address extreme class imbalance (more than 1:100 flood-to-dry ratio in the raw sensor stream; see [flood_event_days_summary.md](flood_event_days_summary.md)).
   - **Isotonic Regression Calibration** providing mathematically consistent posterior risk probabilities.
   - **Temporal Resistance Filter** (< 0.2mm peak threshold) eliminating spurious dry-weather false positives.
 - ⚡ **Tiered Decision Framework & Incident Response**:
@@ -85,6 +85,8 @@ flowchart TD
 | **Training Dataset** | 279 samples (20 verified flood events, 259 non-flood cases) |
 | **Features (9)** | `latitude`, `longitude`, `elev_mean`, `elev_min`, `elev_std`, `rain_sum_15m`, `rain_sum_30m`, `rain_sum_90m`, `rain_max_5m` |
 | **Lead Time** | 15 Minutes before inundation |
+
+> **How non-flood samples were selected:** Non-flood cases are rainfall sensor readings from planning areas that did *not* flood on the same dates when another area did. Keeping the weather the same lets the model learn what separates flooded from non-flooded areas, not simply rainy days from dry ones. Because most dates had no flooding at all, the training set (~1:13 flood-to-dry) is far less imbalanced than the raw sensor stream (>1:100).
 
 ### Operational Alert Tiers & Decision Thresholds
 
